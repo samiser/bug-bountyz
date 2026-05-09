@@ -14,7 +14,9 @@ func add_detection(amount: int) -> void:
 	detection += amount
 	detection_changed.emit(detection)
 
-func add_capture(content: String, source_tool: String, tags: Array[String]) -> void:
+func add_capture(content: String, source_tool: String, tags: Array[String]) -> bool:
+	if has_capture(source_tool, tags):
+		return false
 	var capture := {
 		"content": content,
 		"source_tool": source_tool,
@@ -24,6 +26,13 @@ func add_capture(content: String, source_tool: String, tags: Array[String]) -> v
 	captures.append(capture)
 	capture_added.emit(capture)
 	print("captured: " + source_tool + " " + str(tags))
+	return true
+
+func has_capture(source_tool: String, tags: Array[String]) -> bool:
+	for c in captures:
+		if c.source_tool == source_tool and c.tags == tags:
+			return true
+	return false
 
 func discover_page(url: String) -> void:
 	if not discovered_pages.has(url):

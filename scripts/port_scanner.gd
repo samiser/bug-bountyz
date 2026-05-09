@@ -40,6 +40,9 @@ func _on_scan_pressed() -> void:
 
 	if site == null or site.fingerprints.is_empty():
 		output_label.text = "[i]no services found.[/i]"
+		_last_output = ""
+		_last_output_tags = []
+		_update_capture_button()
 		Sound.play_error()
 		return
 
@@ -50,9 +53,7 @@ func _on_scan_pressed() -> void:
 	output_label.text = output
 	detection_label.text = "detection: +5%"
 	Engagement.add_detection(5)
-
-	capture_button.disabled = false
-	capture_button.text = "capture output"
+	_update_capture_button()
 	Sound.play_click()
 
 func _format_scan(target: String, fingerprints: Array[String]) -> String:
@@ -66,6 +67,17 @@ func _format_scan(target: String, fingerprints: Array[String]) -> String:
 
 func _on_capture_pressed() -> void:
 	Engagement.add_capture(_last_output, "port_scanner", _last_output_tags)
-	capture_button.disabled = true
-	capture_button.text = "captured ✓"
+	_update_capture_button()
 	Sound.play_click()
+
+func _update_capture_button() -> void:
+	if _last_output.is_empty():
+		capture_button.disabled = true
+		capture_button.text = "capture output"
+		return
+	if Engagement.has_capture("port_scanner", _last_output_tags):
+		capture_button.disabled = true
+		capture_button.text = "captured ✓"
+	else:
+		capture_button.disabled = false
+		capture_button.text = "capture output"

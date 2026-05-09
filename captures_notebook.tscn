@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cnbkxh3pq8m4w"]
+
+[ext_resource type="Script" path="res://scripts/captures_notebook.gd" id="1_cn"]
+
+[node name="CapturesNotebook" type="HSplitContainer" unique_id=2200001 node_paths=PackedStringArray("list", "detail")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+split_offset = 150
+script = ExtResource("1_cn")
+list = NodePath("ItemList")
+detail = NodePath("RichTextLabel")
+
+[node name="ItemList" type="ItemList" parent="." unique_id=2200002]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=2200003]
+layout_mode = 2
+bbcode_enabled = true
+scroll_active = true

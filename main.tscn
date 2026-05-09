@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://d2adpvcxffyp4" path="res://browser.tscn" id="1_ig7tw"]
 [ext_resource type="AudioStream" uid="uid://b7m0wy1o3k83b" path="res://audio/pc_fan_loop.wav" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://k1b3xm4saaks" path="res://port_scanner.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://cnbkxh3pq8m4w" path="res://captures_notebook.tscn" id="3_cn"]
+[ext_resource type="Texture2D" uid="uid://dwmkwc3l6puik" path="res://wallpaper.png" id="5_lquwl"]
 
 [node name="Main" type="Control" unique_id=1822029631]
 layout_mode = 3
@@ -45,7 +47,25 @@ size = Vector2i(500, 500)
 
 [node name="PortScanner" parent="Window3" unique_id=1864047590 instance=ExtResource("2_h2yge")]
 
+[node name="Window4" type="Window" parent="." unique_id=1700000001]
+oversampling_override = 1.0
+title = "Captures"
+initial_position = 1
+size = Vector2i(600, 400)
+
+[node name="CapturesNotebook" parent="Window4" unique_id=1700000002 instance=ExtResource("3_cn")]
+split_offsets = PackedInt32Array(150)
+
 [node name="Ambience" type="AudioStreamPlayer2D" parent="." unique_id=2120516250]
 stream = ExtResource("2_0xm2m")
 volume_db = 10.0
 autoplay = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1855100586]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_lquwl")
