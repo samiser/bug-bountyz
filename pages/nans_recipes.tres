@@ -4,4 +4,8 @@
 
 [resource]
 script = ExtResource("1_3ub3e")
+path = "index.html"
+content = "nans shit [url]res://pages/chungus_page.tres[/url]
+
+[url]fat chud[/url]"
 metadata/_custom_type_script = "uid://ckg4qnkq81pmh"

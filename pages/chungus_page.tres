@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Page" format=3 uid="uid://bpp012ye8v6ur"]
+
+[ext_resource type="Script" uid="uid://ckg4qnkq81pmh" path="res://scripts/page.gd" id="1_esc85"]
+
+[resource]
+script = ExtResource("1_esc85")
+path = "chungus.html"
+content = "this is the chungus page
+
+go back to nans shit [url]res://pages/nans_recipes.tres[/url]"
+metadata/_custom_type_script = "uid://ckg4qnkq81pmh"
