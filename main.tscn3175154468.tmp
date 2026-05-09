@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://7g4heclyh8pf"]
+
+[ext_resource type="PackedScene" uid="uid://d4nxltjs4w63k" path="res://test_website.tscn" id="1_ig7tw"]
+[ext_resource type="AudioStream" uid="uid://b7m0wy1o3k83b" path="res://audio/pc_fan_loop.wav" id="2_0xm2m"]
+
+[node name="Main" type="Control" unique_id=1822029631]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Window" type="Window" parent="." unique_id=321217614]
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(500, 500)
+
+[node name="TestWebsite" parent="Window" unique_id=2076547727 instance=ExtResource("1_ig7tw")]
+
+[node name="Window2" type="Window" parent="." unique_id=1974966797]
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(500, 500)
+
+[node name="HistoryLabel" type="RichTextLabel" parent="Window2" unique_id=1520862511]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "history:"
+
+[node name="OS-Sounds" type="AudioStreamPlayer2D" parent="." unique_id=1337391865]
+
+[node name="Ambience" type="AudioStreamPlayer2D" parent="." unique_id=2120516250]
+stream = ExtResource("2_0xm2m")
+volume_db = 10.0
+autoplay = true
