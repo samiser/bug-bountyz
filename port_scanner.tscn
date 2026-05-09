@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://k1b3xm4saaks"]
+
+[ext_resource type="Script" uid="uid://bk7y70wc6y1g6" path="res://scripts/port_scanner.gd" id="1_4og87"]
+
+[node name="PortScanner" type="VBoxContainer" unique_id=1864047590 node_paths=PackedStringArray("target_dropdown", "scan_button", "output_label", "capture_button", "detection_label")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4og87")
+target_dropdown = NodePath("Input/OptionButton")
+scan_button = NodePath("Input/Button")
+output_label = NodePath("Output/OutputLabel")
+capture_button = NodePath("Output/OutputControls/Button")
+detection_label = NodePath("Output/OutputControls/Label")
+
+[node name="Input" type="HBoxContainer" parent="." unique_id=224137031]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Input" unique_id=1137882919]
+layout_mode = 2
+text = "target:"
+
+[node name="OptionButton" type="OptionButton" parent="Input" unique_id=1081064782]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="Input" unique_id=664823640]
+layout_mode = 2
+text = "scan"
+
+[node name="HSeparator" type="HSeparator" parent="." unique_id=2124420826]
+layout_mode = 2
+
+[node name="Output" type="VBoxContainer" parent="." unique_id=336160543]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="OutputLabel" type="RichTextLabel" parent="Output" unique_id=1512211754]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "bing"
+fit_content = true
+
+[node name="OutputControls" type="HBoxContainer" parent="Output" unique_id=910521668]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Output/OutputControls" unique_id=124027033]
+layout_mode = 2
+text = "Capture"
+
+[node name="Control" type="Control" parent="Output/OutputControls" unique_id=1047305847]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Output/OutputControls" unique_id=1427830898]
+layout_mode = 2
+text = "status..."

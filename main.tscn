@@ -1,7 +1,8 @@
-[gd_scene format=3 uid="uid://7g4heclyh8pf"]
+[gd_scene format=3 uid="uid://bk8rj32026cgc"]
 
-[ext_resource type="PackedScene" uid="uid://d4nxltjs4w63k" path="res://test_website.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://d2adpvcxffyp4" path="res://browser.tscn" id="1_ig7tw"]
 [ext_resource type="AudioStream" uid="uid://b7m0wy1o3k83b" path="res://audio/pc_fan_loop.wav" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://k1b3xm4saaks" path="res://port_scanner.tscn" id="2_h2yge"]
 
 [node name="Main" type="Control" unique_id=1822029631]
 layout_mode = 3
@@ -13,11 +14,12 @@ grow_vertical = 2
 
 [node name="Window" type="Window" parent="." unique_id=321217614]
 oversampling_override = 1.0
-title = "Page"
+title = "Browser"
 initial_position = 1
 size = Vector2i(500, 500)
 
-[node name="TestWebsite" parent="Window" unique_id=2076547727 instance=ExtResource("1_ig7tw")]
+[node name="Browser" parent="Window" unique_id=2076547727 instance=ExtResource("1_ig7tw") node_paths=PackedStringArray("history_label")]
+history_label = NodePath("../../Window2/HistoryLabel")
 
 [node name="Window2" type="Window" parent="." unique_id=1974966797]
 oversampling_override = 1.0
@@ -33,7 +35,13 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "history:"
 
-[node name="OS-Sounds" type="AudioStreamPlayer2D" parent="." unique_id=1337391865]
+[node name="Window3" type="Window" parent="." unique_id=1959032847]
+oversampling_override = 1.0
+title = "Port Scanner"
+initial_position = 1
+size = Vector2i(500, 500)
+
+[node name="PortScanner" parent="Window3" unique_id=1864047590 instance=ExtResource("2_h2yge")]
 
 [node name="Ambience" type="AudioStreamPlayer2D" parent="." unique_id=2120516250]
 stream = ExtResource("2_0xm2m")

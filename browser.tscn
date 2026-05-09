@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://d2adpvcxffyp4"]
 
-[ext_resource type="Script" path="res://test_website.gd" id="1_ael0e"]
+[ext_resource type="Script" path="res://scripts/browser.gd" id="1_ael0e"]
 [ext_resource type="Resource" uid="uid://babrl7eo7oadj" path="res://pages/nans_recipes.tres" id="2_f62n4"]
 
-[node name="TestWebsite" type="RichTextLabel" unique_id=2076547727]
+[node name="Browser" type="RichTextLabel" unique_id=2076547727]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

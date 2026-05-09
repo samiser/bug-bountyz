@@ -11,9 +11,18 @@ config_version=5
 [application]
 
 config/name="bug-bountyz"
-run/main_scene="uid://7g4heclyh8pf"
+run/main_scene="uid://bk8rj32026cgc"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Engagement="*uid://cwxr1n1pw1shg"
+Sound="*res://scripts/sound.gd"
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [input]
 
