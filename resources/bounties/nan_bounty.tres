@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Bounty" format=3 uid="uid://maoy6qisc4yb"]
+
+[ext_resource type="Script" uid="uid://c72mw4r1vwo1x" path="res://scripts/bounty.gd" id="1_bnty"]
+[ext_resource type="Resource" uid="uid://babrl7eo7oadj" path="res://resources/sites/nansrecipes.com/index.tres" id="2_nans"]
+
+[resource]
+script = ExtResource("1_bnty")
+program_name = "Nan's Recipes"
+target_page = ExtResource("2_nans")
+payout_min = 100
+payout_max = 500
+scope = "My grandson made me this website and i have no idea how it works.. I'm worried there might be some issues with it!"

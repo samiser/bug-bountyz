@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_3ub3e")
 path = "index.html"
-content = "nans shit [url]res://pages/chungus_page.tres[/url]
+content = "nans shit [url]nansrecipes.com/chungus_page[/url]
 
 [url]fat chud[/url]"
 fingerprints = Array[String](["22/tcp ssh OpenSSH 7.4", "80/tcp http Apache 1.3.27", "443/tcp http Apache 1.3.27"])

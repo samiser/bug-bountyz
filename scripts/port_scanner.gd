@@ -10,7 +10,7 @@ var _last_output : String = ""
 var _last_output_tags : Array[String] = []
 
 func _ready() -> void:
-	Engagement.page_discovered.connect(_on_page_discovered)
+	Engagement.site_discovered.connect(_on_site_discovered)
 	scan_button.pressed.connect(_on_scan_pressed)
 	capture_button.pressed.connect(_on_capture_pressed)
 	capture_button.disabled = true
@@ -21,11 +21,11 @@ func _ready() -> void:
 
 func _refresh_targets() -> void:
 	target_dropdown.clear()
-	for page_path in Engagement.discovered_pages:
-		target_dropdown.add_item(page_path)
+	for domain in Engagement.discovered_sites:
+		target_dropdown.add_item(domain)
 
-func _on_page_discovered(_page_path: String) -> void:
-		_refresh_targets()
+func _on_site_discovered(_domain: String) -> void:
+	_refresh_targets()
 
 func _on_scan_pressed() -> void:
 	var idx := target_dropdown.selected
@@ -33,18 +33,19 @@ func _on_scan_pressed() -> void:
 		Sound.play_error()
 		return
 
-	var page_path := target_dropdown.get_item_text(idx)
-	var page : Page = load(page_path)
-	print("scanning %s" % page_path)
+	var domain := target_dropdown.get_item_text(idx)
+	var site_path := Url.site_resource_path(domain)
+	var site : Site = load(site_path) if ResourceLoader.exists(site_path) else null
+	print("scanning %s" % domain)
 
-	if page == null or page.fingerprints.is_empty():
+	if site == null or site.fingerprints.is_empty():
 		output_label.text = "[i]no services found.[/i]"
 		Sound.play_error()
 		return
 
-	var output := _format_scan(page_path, page.fingerprints)
+	var output := _format_scan(domain, site.fingerprints)
 	_last_output = output
-	_last_output_tags = ["port-scan", "fingerprint", page_path]
+	_last_output_tags = ["port-scan", "fingerprint", domain]
 
 	output_label.text = output
 	detection_label.text = "detection: +5%"

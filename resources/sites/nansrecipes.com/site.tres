@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Site" format=3 uid="uid://bgepechl8qeq4"]
+
+[ext_resource type="Script" uid="uid://cxbe6dwl3fs0w" path="res://scripts/site.gd" id="1_t3uso"]
+
+[resource]
+script = ExtResource("1_t3uso")
+domain = "nansrecipes.com"
+fingerprints = Array[String](["22/tcp ssh OpenSSH 7.4", "80/tcp http Apache 1.3.27", "443/tcp http Apache 1.3.27"])
+metadata/_custom_type_script = "uid://cxbe6dwl3fs0w"

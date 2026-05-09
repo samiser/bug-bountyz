@@ -18,34 +18,37 @@ func _back() -> void:
 		Sound.play_error()
 		return
 
-	var last_page_path : String = history.get(history.size() - 2)
-	var last_page : Page = load(last_page_path)
+	var last_url : String = history[history.size() - 2]
+	var last_page : Page = load(Url.resolve(last_url))
 	history.remove_at(history.size() - 1)
 	_load_page(last_page, false)
 	Sound.play_click()
 
 func _load_page(page : Page, add_history : bool = true) -> void:
-	print("Loaded page: " + page.resource_path)
+	var url := Url.to_url(page)
+	print("Loaded page: " + url)
 
-	Engagement.discover_page(page.resource_path)
+	Engagement.discover_page(url)
+	Engagement.discover_site(Url.site_of(url))
 
-	if add_history: history.append(page.resource_path)
+	if add_history: history.append(url)
 	_display_history()
 
 	text = ""
-	append_text(page.content)
+	append_text(page.get_content())
 
 func _display_history() -> void:
 	history_label.text = ""
-	print("history size:" + str(history.size()))
 	for url in history:
 		history_label.append_text(url + "\n")
 
 func _on_meta_clicked(meta: String) -> void:
-	if meta.begins_with("res://pages/"):
-		var new_page : Page = load(meta)
-		_load_page(new_page)
-		Sound.play_click()
-	else:
-		print("WTF IS THIS: " + meta)
+	var current_site := Url.site_of(history[history.size() - 1]) if not history.is_empty() else ""
+	var resolved := Url.resolve(meta, current_site)
+	var new_page : Page = load(resolved)
+	if new_page == null:
+		print("broken link: %s" % meta)
 		Sound.play_error()
+		return
+	_load_page(new_page)
+	Sound.play_click()

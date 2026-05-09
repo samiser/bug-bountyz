@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Engagement="*uid://cwxr1n1pw1shg"
 Sound="*res://scripts/sound.gd"
+Url="*res://scripts/url.gd"
 
 [display]
 

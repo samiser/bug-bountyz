@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d2adpvcxffyp4"]
 
 [ext_resource type="Script" path="res://scripts/browser.gd" id="1_ael0e"]
-[ext_resource type="Resource" uid="uid://babrl7eo7oadj" path="res://pages/nans_recipes.tres" id="2_f62n4"]
+[ext_resource type="Resource" uid="uid://ckfkf46o1mdke" path="res://resources/sites/bug-bountyz.net/index.tres" id="2_f62n4"]
 
 [node name="Browser" type="RichTextLabel" unique_id=2076547727]
 anchors_preset = 15

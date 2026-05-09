@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PlatformPage" format=3 uid="uid://ckfkf46o1mdke"]
+
+[ext_resource type="Script" uid="uid://c72mw4r1vwo1x" path="res://scripts/bounty.gd" id="1_dsk1c"]
+[ext_resource type="Script" uid="uid://po6qa3yf7wti" path="res://scripts/platform_page.gd" id="1_pp"]
+[ext_resource type="Resource" uid="uid://maoy6qisc4yb" path="res://resources/bounties/nan_bounty.tres" id="2_e3lvg"]
+
+[resource]
+script = ExtResource("1_pp")
+bounties = Array[ExtResource("1_dsk1c")]([ExtResource("2_e3lvg")])
+metadata/_custom_type_search = "Resource"

@@ -3,4 +3,6 @@ extends Resource
 
 @export var path: String
 @export_multiline var content: String
-@export var fingerprints: Array[String]
+
+func get_content() -> String:
+	return content

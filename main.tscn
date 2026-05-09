@@ -16,9 +16,10 @@ grow_vertical = 2
 oversampling_override = 1.0
 title = "Browser"
 initial_position = 1
-size = Vector2i(500, 500)
+size = Vector2i(552, 400)
+unresizable = true
 
-[node name="Browser" parent="Window" unique_id=2076547727 instance=ExtResource("1_ig7tw") node_paths=PackedStringArray("history_label")]
+[node name="Browser" parent="Window" unique_id=2076547727 node_paths=PackedStringArray("history_label") instance=ExtResource("1_ig7tw")]
 history_label = NodePath("../../Window2/HistoryLabel")
 
 [node name="Window2" type="Window" parent="." unique_id=1974966797]
@@ -26,6 +27,7 @@ oversampling_override = 1.0
 title = "History"
 initial_position = 1
 size = Vector2i(200, 500)
+visible = false
 
 [node name="HistoryLabel" type="RichTextLabel" parent="Window2" unique_id=1520862511]
 anchors_preset = 15
