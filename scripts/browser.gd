@@ -1,18 +1,34 @@
 extends Control
 
-@export var homepage : Page
-@export var history_label : RichTextLabel
+var current_page : Page
 
-@onready var content_label: RichTextLabel = $content_label
-@onready var background_image: TextureRect = $background_image
-@onready var background_colour: ColorRect = $background_colour
+@export var homepage : Page
+
+@onready var content_label: RichTextLabel = $VBoxContainer/page_panel/content_label
+@onready var background_image: TextureRect = $VBoxContainer/page_panel/background_image
+@onready var background_colour: ColorRect = $VBoxContainer/page_panel/background_colour
+
+@onready var prev_button: Button = $VBoxContainer/control_panel/HBoxContainer/PrevButton
+@onready var next_button: Button = $VBoxContainer/control_panel/HBoxContainer/NextButton
+@onready var home_button: Button = $VBoxContainer/control_panel/HBoxContainer/HomeButton
+@onready var history_button: Button = $VBoxContainer/control_panel/HBoxContainer/HistoryButton
+@onready var refresh_button: Button = $VBoxContainer/control_panel/HBoxContainer/RefreshButton
+@onready var url_label: RichTextLabel = $VBoxContainer/control_panel/HBoxContainer/ColorRect/url_label
 
 @onready var page_music: AudioStreamPlayer = $page_music
 
+var current_history_index : int = 0
 var history : Array[String]
 
 func _ready() -> void:
 	content_label.meta_clicked.connect(_on_meta_clicked)
+	
+	prev_button.button_down.connect(_back)
+	next_button.button_down.connect(_next)
+	home_button.button_down.connect(func() : _load_page(homepage))
+	history_button.button_down.connect(_view_history)
+	refresh_button.button_down.connect(_refresh)
+	
 	_load_page(homepage)
 
 func _process(delta: float) -> void:
@@ -20,26 +36,46 @@ func _process(delta: float) -> void:
 		_back()
 
 func _back() -> void:
-	if history.size() <= 1:
+	if history.size() <= 1 or current_history_index == 0:
 		print("Can't go back!")
 		Sound.play_error()
 		return
 
-	var last_url : String = history[history.size() - 2]
+	var last_url : String = history[current_history_index - 1]
 	var last_page : Page = load(Url.resolve(last_url))
-	history.remove_at(history.size() - 1)
+	current_history_index -= 1
 	_load_page(last_page, false)
-	Sound.play_click()
+
+func _next() -> void:
+	if current_history_index >= history.size() - 1:
+		print("Can't go forward!")
+		Sound.play_error()
+		return
+	
+	var next_url : String = history[current_history_index + 1]
+	var next_page : Page = load(Url.resolve(next_url))
+	current_history_index += 1
+	_load_page(next_page, false)
+
+func _refresh() -> void:
+	if current_page:
+		_load_page(current_page, false)
+	else:
+		Sound.play_error()
 
 func _load_page(page : Page, add_history : bool = true) -> void:
 	var url := Url.to_url(page)
-	print("Loaded page: " + url)
-
+	
+	url_label.text = url
+	
 	Engagement.discover_page(url)
 	Engagement.discover_site(Url.site_of(url))
 
-	if add_history: history.append(url)
-	_display_history()
+	if add_history and page != current_page:
+		if history.size() - 1 > current_history_index:
+			history.resize(current_history_index + 1)
+		history.append(url)
+		current_history_index = history.size() - 1
 
 	content_label.text = ""
 	content_label.append_text(page.get_content())
@@ -56,11 +92,29 @@ func _load_page(page : Page, add_history : bool = true) -> void:
 	if page.background_img:
 		background_image.texture = page.background_img
 	background_colour.color = page.background_colour
+	
+	current_page = page
+	
+	content_label.scroll_to_line(0)
+	
+	Sound.play_click()
 
-func _display_history() -> void:
-	history_label.text = ""
+func _view_history() -> void:
+	var history_page : Page = Page.new()
+		
+	history_page.content = "[color=BLACK]History:\n"
+	
+	var url_index : int = 0
 	for url in history:
-		history_label.append_text(url + "\n")
+		if url_index == current_history_index:
+			history_page.content += "- [color=BLUE]" + url + "[/color]\n"
+		else:
+			history_page.content += "- " + url + "\n"
+		url_index += 1
+		
+	history_page.content += "[/color]"
+	
+	_load_page(history_page, false)
 
 func _on_meta_clicked(meta: String) -> void:
 	if meta.begins_with("action://"):
@@ -77,7 +131,6 @@ func _on_meta_clicked(meta: String) -> void:
 		return
 
 	_load_page(new_page)
-	Sound.play_click()
 
 func _invoke_action(action_str: String) -> void:
 	var parts := action_str.split("/", false)

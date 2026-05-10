@@ -4,7 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://b7m0wy1o3k83b" path="res://audio/pc_fan_loop.wav" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://k1b3xm4saaks" path="res://port_scanner.tscn" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://cnbkxh3pq8m4w" path="res://captures_notebook.tscn" id="3_cn"]
-[ext_resource type="PackedScene" uid="uid://cdcryaka2yq80" path="res://cve_directory.tscn" id="4_cd"]
+[ext_resource type="PackedScene" path="res://cve_directory.tscn" id="4_cd"]
 [ext_resource type="Texture2D" uid="uid://dwmkwc3l6puik" path="res://wallpaper.png" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://bsf3xmqkpw7n2" path="res://submission_form.tscn" id="6_sf"]
 
@@ -23,23 +23,7 @@ initial_position = 1
 size = Vector2i(552, 400)
 unresizable = true
 
-[node name="Browser" parent="Window" unique_id=2076547727 node_paths=PackedStringArray("history_label") instance=ExtResource("1_ig7tw")]
-history_label = NodePath("../../Window2/HistoryLabel")
-
-[node name="Window2" type="Window" parent="." unique_id=1974966797]
-oversampling_override = 1.0
-title = "History"
-initial_position = 1
-size = Vector2i(200, 500)
-visible = false
-
-[node name="HistoryLabel" type="RichTextLabel" parent="Window2" unique_id=1520862511]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "history:"
+[node name="Browser" parent="Window" unique_id=2076547727 instance=ExtResource("1_ig7tw")]
 
 [node name="Window3" type="Window" parent="." unique_id=1959032847]
 oversampling_override = 1.0

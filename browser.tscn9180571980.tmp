@@ -57,35 +57,11 @@ grow_vertical = 2
 
 [node name="PrevButton" type="Button" parent="VBoxContainer/control_panel/HBoxContainer" unique_id=1853789004]
 layout_mode = 2
-text = "<"
+text = "BACK"
 
 [node name="NextButton" type="Button" parent="VBoxContainer/control_panel/HBoxContainer" unique_id=1610254222]
 layout_mode = 2
-text = ">"
-
-[node name="HomeButton" type="Button" parent="VBoxContainer/control_panel/HBoxContainer" unique_id=575099161]
-layout_mode = 2
-text = "HOME"
-
-[node name="RefreshButton" type="Button" parent="VBoxContainer/control_panel/HBoxContainer" unique_id=105954897]
-layout_mode = 2
-text = "REFRESH"
-
-[node name="ColorRect" type="ColorRect" parent="VBoxContainer/control_panel/HBoxContainer" unique_id=1712727755]
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.66245234, 0.66245234, 0.6624523, 1)
-
-[node name="url_label" type="RichTextLabel" parent="VBoxContainer/control_panel/HBoxContainer/ColorRect" unique_id=1327925952]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-bbcode_enabled = true
-text = "www.wah.com"
-vertical_alignment = 1
+text = "NEXT"
 
 [node name="HistoryButton" type="Button" parent="VBoxContainer/control_panel/HBoxContainer" unique_id=1244950704]
 layout_mode = 2
