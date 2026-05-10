@@ -2,12 +2,21 @@
 
 [ext_resource type="Texture2D" uid="uid://bgjbq3afakib1" path="res://images/img_y2k_icon.bmp" id="1_2avd3"]
 [ext_resource type="Script" uid="uid://ckg4qnkq81pmh" path="res://scripts/page.gd" id="1_skyko"]
+[ext_resource type="AudioStream" uid="uid://b47h551qo4idp" path="res://audio/music/music_y2k.mp3" id="2_0d6ji"]
 
 [resource]
 script = ExtResource("1_skyko")
 path = "index.html"
 content = "[center][img]res://images/img_y2k_logo.jpg[/img][/center]
-this game is so [rainbow]tuff[/rainbow]"
+[outline_size=1][outline_color=WHITE][color=BLACK]
+23:59, December 31st, 1999.
+
+Remember to turn your computer off before midnight, or else the Millennium Bug will kick ass until every file is destroyed.
+Dungeon Crawling Action!
+
+You take control of the Millennium Bug, moving through a computer to do as much damage as possible. Familiar foes and dangerous obstacles will try their best to stop you, from Firewalls to minefields. Be efficient with your destruction, as each item consumes your energy supply.
+[/color][/outline_color]"
 background_img = ExtResource("1_2avd3")
 background_colour = Color(0, 0, 0, 1)
+music = ExtResource("2_0d6ji")
 metadata/_custom_type_script = "uid://ckg4qnkq81pmh"

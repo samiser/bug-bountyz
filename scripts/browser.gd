@@ -7,6 +7,8 @@ extends Control
 @onready var background_image: TextureRect = $background_image
 @onready var background_colour: ColorRect = $background_colour
 
+@onready var page_music: AudioStreamPlayer = $page_music
+
 var history : Array[String]
 
 func _ready() -> void:
@@ -41,6 +43,14 @@ func _load_page(page : Page, add_history : bool = true) -> void:
 
 	content_label.text = ""
 	content_label.append_text(page.get_content())
+	
+	if page.music:
+		if page_music.stream != page.music:
+			page_music.stream = page.music
+			page_music.play()
+	else:
+		page_music.stream = null
+		page_music.stop()
 	
 	background_image.visible = page.background_img != null
 	if page.background_img:
