@@ -9,7 +9,7 @@ extends VBoxContainer
 @export var form_view : Control
 @export var outcome_view : Control
 @export var outcome_label : RichTextLabel
-@export var dismiss_button : Button
+@export var close_button : Button
 
 func _ready() -> void:
 	bounty_dropdown.item_selected.connect(_on_bounty_selected)
@@ -18,7 +18,7 @@ func _ready() -> void:
 	specifics_dropdown.item_selected.connect(_on_specifics_selected)
 	poc_list.multi_selected.connect(_on_poc_changed)
 	submit_button.pressed.connect(_on_submit)
-	dismiss_button.pressed.connect(_show_form)
+	close_button.pressed.connect(get_parent().hide)
 	Engagement.capture_added.connect(_on_capture_added)
 	Engagement.action_invoked.connect(_on_action)
 	poc_list.select_mode = ItemList.SELECT_MULTI

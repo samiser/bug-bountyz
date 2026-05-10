@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://ox62ws8mcbvk" path="res://scripts/finding.gd" id="1_g1uqv"]
 [ext_resource type="Resource" uid="uid://babrl7eo7oadj" path="res://resources/sites/nansrecipes.com/index.tres" id="2_axno1"]
 [ext_resource type="Resource" uid="uid://c63smvcu7qq5i" path="res://resources/findings/apache_rce.tres" id="2_qgmit"]
+[ext_resource type="Resource" path="res://resources/findings/missing_auth.tres" id="3_qgmit"]
 
 [resource]
 script = ExtResource("1_17wce")
@@ -13,4 +14,4 @@ target_page = ExtResource("2_axno1")
 payout_min = 100
 payout_max = 500
 scope = "My grandson made me this website and i have no idea how it works.. I'm worried there might be some issues with it!"
-findings = Array[ExtResource("1_g1uqv")]([ExtResource("2_qgmit")])
+findings = Array[ExtResource("1_g1uqv")]([ExtResource("2_qgmit"), ExtResource("3_qgmit")])

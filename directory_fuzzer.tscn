@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://df0k7r3pq2mxw"]
+
+[ext_resource type="Script" path="res://scripts/directory_fuzzer.gd" id="1_df"]
+
+[node name="DirectoryFuzzer" type="VBoxContainer" unique_id=2500001 node_paths=PackedStringArray("target_dropdown", "fuzz_button", "output_label", "capture_button")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_df")
+target_dropdown = NodePath("Input/OptionButton")
+fuzz_button = NodePath("Input/Button")
+output_label = NodePath("Output/OutputLabel")
+capture_button = NodePath("Output/OutputControls/Button")
+
+[node name="Input" type="HBoxContainer" parent="." unique_id=2500002]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Input" unique_id=2500003]
+layout_mode = 2
+text = "target:"
+
+[node name="OptionButton" type="OptionButton" parent="Input" unique_id=2500004]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="Input" unique_id=2500005]
+layout_mode = 2
+text = "fuzz"
+
+[node name="HSeparator" type="HSeparator" parent="." unique_id=2500006]
+layout_mode = 2
+
+[node name="Output" type="VBoxContainer" parent="." unique_id=2500007]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="OutputLabel" type="RichTextLabel" parent="Output" unique_id=2500008]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+fit_content = true
+scroll_active = true
+
+[node name="OutputControls" type="HBoxContainer" parent="Output" unique_id=2500009]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Output/OutputControls" unique_id=2500010]
+layout_mode = 2
+text = "capture"
+
+[node name="Control" type="Control" parent="Output/OutputControls" unique_id=2500011]
+layout_mode = 2
+size_flags_horizontal = 3

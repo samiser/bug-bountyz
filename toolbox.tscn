@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dtn5qqrb7fhya"]
+
+[ext_resource type="PackedScene" uid="uid://k1b3xm4saaks" path="res://port_scanner.tscn" id="1_hf060"]
+[ext_resource type="PackedScene" uid="uid://df0k7r3pq2mxw" path="res://directory_fuzzer.tscn" id="2_hre1t"]
+
+[node name="Toolbox" type="Control" unique_id=474395757]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="." unique_id=438107669]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 0
+
+[node name="Port Scanner" parent="TabContainer" unique_id=1864047590 instance=ExtResource("1_hf060")]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Directory Fuzzer" parent="TabContainer" unique_id=2500001 instance=ExtResource("2_hre1t")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1

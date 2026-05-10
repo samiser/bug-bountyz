@@ -14,7 +14,7 @@ var current_page : Page
 @onready var home_button: Button = $VBoxContainer/control_panel/HBoxContainer/HomeButton
 @onready var history_button: Button = $VBoxContainer/control_panel/HBoxContainer/HistoryButton
 @onready var refresh_button: Button = $VBoxContainer/control_panel/HBoxContainer/RefreshButton
-@onready var url_label: RichTextLabel = $VBoxContainer/control_panel/HBoxContainer/ColorRect/url_label
+@onready var url_input: LineEdit = $VBoxContainer/control_panel/HBoxContainer/ColorRect/url_label
 
 @onready var page_music: AudioStreamPlayer = $page_music
 
@@ -36,16 +36,14 @@ func _ready() -> void:
 	refresh_button.button_down.connect(_refresh)
 	source_button.button_down.connect(_toggle_source)
 	source_capture_button.pressed.connect(_capture_source)
+	url_input.text_submitted.connect(_on_url_submitted)
 	Engagement.capture_added.connect(_on_capture_added)
+	Engagement.action_invoked.connect(_on_action)
 
 	source_panel.visible = false
 	source_content_label.bbcode_enabled = false
 
 	_load_page(homepage)
-
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("ui_cancel"):
-		_back()
 
 func _back() -> void:
 	if history.size() <= 1 or current_history_index == 0:
@@ -78,7 +76,7 @@ func _refresh() -> void:
 func _load_page(page : Page, add_history : bool = true) -> void:
 	var url := Url.to_url(page)
 	
-	url_label.text = url
+	url_input.text = url
 	
 	Engagement.discover_page(url)
 	Engagement.discover_site(Url.site_of(url))
@@ -110,7 +108,8 @@ func _load_page(page : Page, add_history : bool = true) -> void:
 	content_label.scroll_to_line(0)
 
 	if source_panel.visible:
-		source_content_label.text = page.content
+		source_panel.visible = false
+		page_panel.visible = true
 	_update_source_capture_button()
 
 	Sound.play_click()
@@ -157,6 +156,30 @@ func _update_source_capture_button() -> void:
 
 func _on_capture_added(_capture: Dictionary) -> void:
 	_update_source_capture_button()
+
+func _on_url_submitted(text: String) -> void:
+	if text.is_empty():
+		return
+	var current_site := Url.site_of(history[history.size() - 1]) if not history.is_empty() else ""
+	var page : Page = load(Url.resolve(text, current_site))
+	if page == null:
+		Sound.play_error()
+		return
+	_load_page(page)
+
+func _on_action(name: String, args: Array) -> void:
+	if name != "navigate" or args.is_empty():
+		return
+	var url : String = "/".join(args)
+	var page : Page = load(Url.resolve(url))
+	if page == null:
+		Sound.play_error()
+		return
+	_load_page(page)
+	var window := get_parent() as Window
+	if window != null:
+		window.show()
+		window.move_to_foreground()
 
 func _view_history() -> void:
 	var history_page : Page = Page.new()

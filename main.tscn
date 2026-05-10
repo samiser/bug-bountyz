@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://d2adpvcxffyp4" path="res://browser.tscn" id="1_ig7tw"]
 [ext_resource type="AudioStream" uid="uid://b7m0wy1o3k83b" path="res://audio/pc_fan_loop.wav" id="2_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://k1b3xm4saaks" path="res://port_scanner.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://dtn5qqrb7fhya" path="res://toolbox.tscn" id="2_272bh"]
 [ext_resource type="PackedScene" uid="uid://cnbkxh3pq8m4w" path="res://captures_notebook.tscn" id="3_cn"]
-[ext_resource type="PackedScene" path="res://cve_directory.tscn" id="4_cd"]
+[ext_resource type="PackedScene" uid="uid://cdcryaka2yq80" path="res://cve_directory.tscn" id="4_cd"]
 [ext_resource type="Texture2D" uid="uid://dwmkwc3l6puik" path="res://wallpaper.png" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://bsf3xmqkpw7n2" path="res://submission_form.tscn" id="6_sf"]
 
@@ -27,11 +27,11 @@ unresizable = true
 
 [node name="Window3" type="Window" parent="." unique_id=1959032847]
 oversampling_override = 1.0
-title = "Port Scanner"
+title = "Toolbox"
 initial_position = 1
 size = Vector2i(300, 300)
 
-[node name="PortScanner" parent="Window3" unique_id=1864047590 instance=ExtResource("2_h2yge")]
+[node name="Toolbox" parent="Window3" unique_id=474395757 instance=ExtResource("2_272bh")]
 
 [node name="Window4" type="Window" parent="." unique_id=1700000001]
 oversampling_override = 1.0

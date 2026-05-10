@@ -65,31 +65,29 @@ text = ">"
 
 [node name="HomeButton" type="Button" parent="VBoxContainer/control_panel/HBoxContainer" unique_id=575099161]
 layout_mode = 2
-text = "HOME"
+text = "H"
 
 [node name="RefreshButton" type="Button" parent="VBoxContainer/control_panel/HBoxContainer" unique_id=105954897]
 layout_mode = 2
-text = "REFRESH"
+text = "R"
 
 [node name="ColorRect" type="ColorRect" parent="VBoxContainer/control_panel/HBoxContainer" unique_id=1712727755]
 layout_mode = 2
 size_flags_horizontal = 3
 color = Color(0.66245234, 0.66245234, 0.6624523, 1)
 
-[node name="url_label" type="RichTextLabel" parent="VBoxContainer/control_panel/HBoxContainer/ColorRect" unique_id=1327925952]
+[node name="url_label" type="LineEdit" parent="VBoxContainer/control_panel/HBoxContainer/ColorRect" unique_id=766254845]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-bbcode_enabled = true
 text = "www.wah.com"
-vertical_alignment = 1
 
 [node name="HistoryButton" type="Button" parent="VBoxContainer/control_panel/HBoxContainer" unique_id=1244950704]
 layout_mode = 2
-text = "HISTORY"
+text = "Hist"
 
 [node name="SourceButton" type="Button" parent="VBoxContainer/control_panel/HBoxContainer" unique_id=1245828596]
 layout_mode = 2
