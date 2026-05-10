@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bsf3xmqkpw7n2"]
 
-[ext_resource type="Script" path="res://scripts/submission_form.gd" id="1_sf"]
+[ext_resource type="Script" uid="uid://bxcy146w1rjgh" path="res://scripts/submission_form.gd" id="1_sf"]
 
 [node name="SubmissionForm" type="VBoxContainer" unique_id=2400001 node_paths=PackedStringArray("bounty_dropdown", "endpoint_dropdown", "class_dropdown", "specifics_dropdown", "poc_list", "submit_button", "form_view", "outcome_view", "outcome_label", "dismiss_button")]
 anchors_preset = 15
@@ -28,20 +28,21 @@ size_flags_vertical = 3
 layout_mode = 2
 
 [node name="Label" type="Label" parent="FormView/Bounty" unique_id=2400004]
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
-custom_minimum_size = Vector2i(80, 0)
 text = "bounty:"
 
 [node name="OptionButton" type="OptionButton" parent="FormView/Bounty" unique_id=2400005]
 layout_mode = 2
 size_flags_horizontal = 3
+disabled = true
 
 [node name="Endpoint" type="HBoxContainer" parent="FormView" unique_id=2400006]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="FormView/Endpoint" unique_id=2400007]
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
-custom_minimum_size = Vector2i(80, 0)
 text = "endpoint:"
 
 [node name="OptionButton" type="OptionButton" parent="FormView/Endpoint" unique_id=2400008]
@@ -52,8 +53,8 @@ size_flags_horizontal = 3
 layout_mode = 2
 
 [node name="Label" type="Label" parent="FormView/Class" unique_id=2400010]
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
-custom_minimum_size = Vector2i(80, 0)
 text = "class:"
 
 [node name="OptionButton" type="OptionButton" parent="FormView/Class" unique_id=2400011]
@@ -64,8 +65,8 @@ size_flags_horizontal = 3
 layout_mode = 2
 
 [node name="Label" type="Label" parent="FormView/Specifics" unique_id=2400013]
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
-custom_minimum_size = Vector2i(80, 0)
 text = "specifics:"
 
 [node name="OptionButton" type="OptionButton" parent="FormView/Specifics" unique_id=2400014]

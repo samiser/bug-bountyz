@@ -20,8 +20,28 @@ func _ready() -> void:
 	submit_button.pressed.connect(_on_submit)
 	dismiss_button.pressed.connect(_show_form)
 	Engagement.capture_added.connect(_on_capture_added)
+	Engagement.action_invoked.connect(_on_action)
 	poc_list.select_mode = ItemList.SELECT_MULTI
 	_show_form()
+
+func _on_action(name: String, args: Array) -> void:
+	if name != "report":
+		return
+	_show_form()
+	if args.size() > 0:
+		_select_bounty_by_id(args[0])
+	var window := get_parent() as Window
+	if window != null:
+		window.show()
+		window.move_to_foreground()
+
+func _select_bounty_by_id(bounty_id: String) -> void:
+	var bounties := Bounties.get_all()
+	for i in bounties.size():
+		if bounties[i].id == bounty_id:
+			bounty_dropdown.selected = i + 1
+			_on_bounty_selected(i + 1)
+			return
 
 func _show_form() -> void:
 	form_view.visible = true
@@ -67,9 +87,8 @@ func _refresh_specifics() -> void:
 	specifics_dropdown.set_item_disabled(0, true)
 	if class_dropdown.selected > 0:
 		var picked_class : String = class_dropdown.get_item_text(class_dropdown.selected)
-		for cve_id in Engagement.read_cves:
-			var cve : CVE = Cves.get_by_id(cve_id)
-			if cve != null and cve.vuln_class == picked_class:
+		for cve in Cves.get_all():
+			if cve.vuln_class == picked_class:
 				specifics_dropdown.add_item(cve.id)
 	specifics_dropdown.selected = 0
 	specifics_dropdown.disabled = class_dropdown.selected <= 0
@@ -141,6 +160,8 @@ func _grade(submission: Dictionary) -> Dictionary:
 	var bounty : Bounty = submission.bounty
 	for i in bounty.findings.size():
 		var f : Finding = bounty.findings[i]
+		print("checking finding %d: endpoint=%s class=%s specifics=%s required_poc=%s" % [i, f.endpoint, f.vuln_class, f.specifics, f.required_poc])
+		print("submitted: endpoint=%s class=%s specifics=%s poc_tags=%s" % [submission.endpoint, submission.vuln_class, submission.specifics, submission.poc_captures.map(func(c): return c.tags)])
 		var key := "%s::%d" % [bounty.id, i]
 		if Engagement.is_finding_claimed(key):
 			continue

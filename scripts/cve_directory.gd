@@ -18,7 +18,6 @@ func _refresh() -> void:
 
 func _on_selected(idx: int) -> void:
 	var cve : CVE = Cves.get_all()[idx]
-	Engagement.read_cve(cve.id)
 	detail.text = _format(cve)
 
 func _format(cve: CVE) -> String:

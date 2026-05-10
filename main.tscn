@@ -5,9 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://k1b3xm4saaks" path="res://port_scanner.tscn" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://cnbkxh3pq8m4w" path="res://captures_notebook.tscn" id="3_cn"]
 [ext_resource type="PackedScene" uid="uid://cdcryaka2yq80" path="res://cve_directory.tscn" id="4_cd"]
-[ext_resource type="PackedScene" uid="uid://bsf3xmqkpw7n2" path="res://submission_form.tscn" id="6_sf"]
-[ext_resource type="PackedScene" path="res://cve_directory.tscn" id="4_cd"]
 [ext_resource type="Texture2D" uid="uid://dwmkwc3l6puik" path="res://wallpaper.png" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://bsf3xmqkpw7n2" path="res://submission_form.tscn" id="6_sf"]
 
 [node name="Main" type="Control" unique_id=1822029631]
 layout_mode = 3
@@ -73,6 +72,7 @@ oversampling_override = 1.0
 title = "Submit Report"
 initial_position = 1
 size = Vector2i(450, 400)
+visible = false
 
 [node name="SubmissionForm" parent="Window6" unique_id=1700000006 instance=ExtResource("6_sf")]
 

@@ -3,9 +3,10 @@
 [ext_resource type="Script" uid="uid://c72mw4r1vwo1x" path="res://scripts/bounty.gd" id="1_dsk1c"]
 [ext_resource type="Script" uid="uid://po6qa3yf7wti" path="res://scripts/platform_page.gd" id="1_pp"]
 [ext_resource type="Resource" uid="uid://maoy6qisc4yb" path="res://resources/bounties/y2k_bounty.tres" id="2_e3lvg"]
+[ext_resource type="Resource" uid="uid://dw5smtxbp4yea" path="res://resources/bounties/nans_bounty.tres" id="2_m3kkv"]
 
 [resource]
 script = ExtResource("1_pp")
-bounties = Array[ExtResource("1_dsk1c")]([ExtResource("2_e3lvg")])
+bounties = Array[ExtResource("1_dsk1c")]([ExtResource("2_m3kkv"), ExtResource("2_e3lvg")])
 background_colour = Color(0, 0, 0, 1)
 metadata/_custom_type_search = "Resource"

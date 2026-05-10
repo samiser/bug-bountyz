@@ -63,6 +63,11 @@ func _display_history() -> void:
 		history_label.append_text(url + "\n")
 
 func _on_meta_clicked(meta: String) -> void:
+	if meta.begins_with("action://"):
+		_invoke_action(meta.substr("action://".length()))
+		Sound.play_click()
+		return
+
 	var current_site := Url.site_of(history[history.size() - 1]) if not history.is_empty() else ""
 	var resolved := Url.resolve(meta, current_site)
 	var new_page : Page = load(resolved)
@@ -70,6 +75,14 @@ func _on_meta_clicked(meta: String) -> void:
 		print("broken link: %s" % meta)
 		Sound.play_error()
 		return
-	
+
 	_load_page(new_page)
 	Sound.play_click()
+
+func _invoke_action(action_str: String) -> void:
+	var parts := action_str.split("/", false)
+	if parts.is_empty():
+		return
+	var name : String = parts[0]
+	var args : Array = parts.slice(1)
+	Engagement.action_invoked.emit(name, args)

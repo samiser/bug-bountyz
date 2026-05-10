@@ -9,5 +9,5 @@ vuln_class = "Remote Code Execution"
 specifics = "CVE-2002-0392"
 severity = "Critical"
 payout = 500
-required_poc = Array[String]([""])
+required_poc = Array[String](["port-scan", "nansrecipes.com"])
 metadata/_custom_type_script = "uid://ox62ws8mcbvk"
