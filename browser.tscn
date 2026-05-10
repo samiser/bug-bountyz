@@ -1,16 +1,42 @@
 [gd_scene format=3 uid="uid://d2adpvcxffyp4"]
 
-[ext_resource type="Script" path="res://scripts/browser.gd" id="1_ael0e"]
+[ext_resource type="Script" uid="uid://dyxlcbw1b4a06" path="res://scripts/browser.gd" id="1_ael0e"]
 [ext_resource type="Resource" uid="uid://ckfkf46o1mdke" path="res://resources/sites/bug-bountyz.net/index.tres" id="2_f62n4"]
 
-[node name="Browser" type="RichTextLabel" unique_id=2076547727]
+[node name="Browser" type="Control" unique_id=2132311247]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ael0e")
+homepage = ExtResource("2_f62n4")
+
+[node name="background_colour" type="ColorRect" parent="." unique_id=322148886]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="background_image" type="TextureRect" parent="." unique_id=1213417281]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+stretch_mode = 1
+
+[node name="content_label" type="RichTextLabel" parent="." unique_id=2076547727]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
-script = ExtResource("1_ael0e")
-homepage = ExtResource("2_f62n4")
-
-[connection signal="meta_clicked" from="." to="." method="_on_meta_clicked"]
