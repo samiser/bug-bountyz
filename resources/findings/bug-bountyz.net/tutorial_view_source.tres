@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Finding" format=3 uid="uid://ctutvs2pq8nxr"]
+
+[ext_resource type="Script" uid="uid://ox62ws8mcbvk" path="res://scripts/finding.gd" id="1_tut"]
+
+[resource]
+script = ExtResource("1_tut")
+endpoint = "bug-bountyz.net/backstage.html"
+vuln_class = "Authentication Bypass"
+specifics = "Missing Authentication Check"
+severity = "Low"
+payout = 10
+required_poc = Array[String](["view-source", "bug-bountyz.net/backstage.html"])
+metadata/_custom_type_script = "uid://ox62ws8mcbvk"

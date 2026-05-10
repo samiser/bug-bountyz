@@ -19,8 +19,12 @@ const PAGE_TEMPLATE := """[center][rainbow][font_size=28]★ b u g - b o u n t y
 
 const ENTRY_TEMPLATE := """[b]%s[/b]
 payout: $%d–$%d - difficulty: %s
+detection: %d%%
 [i]%s[/i]
 [url=%s][color=cyan]>>> go to engagement <<<[/color][/url] [url=%s][color=red]>>> report finding <<<[/color][/url]"""
+
+const BURNED_TEMPLATE := """[b]%s[/b] [color=red][BURNED][/color]
+[i]engagement closed by detection. no further submissions.[/i]"""
 
 func get_content() -> String:
 	if bounties.is_empty():
@@ -28,12 +32,16 @@ func get_content() -> String:
 
 	var entries : Array[String] = []
 	for b in bounties:
+		if Engagement.is_burned(b.id):
+			entries.append(BURNED_TEMPLATE % b.program_name)
+			continue
 		var stars := "★".repeat(b.difficulty) + "☆".repeat(5 - b.difficulty)
 		entries.append(ENTRY_TEMPLATE % [
 			b.program_name,
 			b.payout_min,
 			b.payout_max,
 			stars,
+			Engagement.get_detection(b.id),
 			b.scope,
 			Url.to_url(b.target_page),
 			"action://report/" + b.id,

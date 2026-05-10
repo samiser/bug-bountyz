@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="Page" format=3 uid="uid://d23q7drbir5fy"]
+
+[ext_resource type="Script" uid="uid://ckg4qnkq81pmh" path="res://scripts/page.gd" id="1_y4m0v"]
+
+[resource]
+script = ExtResource("1_y4m0v")
+content = "[center][rainbow][font_size=24]★ bug-bountyz.net ★[/font_size][/rainbow][/center]
+
+[center][i]new here? follow this guide to learn the ropes.[/i][/center]
+
+[color=hotpink][font_size=16]>> what you do here[/font_size][/color]
+
+companies hire bug-bountyz to find security flaws in their websites. you investigate their sites using your tools and curiosity, find flaws, capture proof, and file reports through this platform. if your reports check out, the company pays you [font_size=9](minus a reasonable commision fee)[/font_size]
+
+[color=hotpink][font_size=16]>> your first finding[/font_size][/color]
+
+a vulnerability is hiding on [b]this very page[/b]. here's how to report it:
+
+[b]1.[/b] click [View Source] above to see the source code of this page. read carefully to find a hidden comment.
+
+[b]2.[/b] the comment contains a url path. type it into the address bar after the domain and hit enter.
+
+[b]3.[/b] on the page you arrive at, click [b]capture source[/b]. this saves the page as evidence in your captures index.
+
+[b]4.[/b] hit the [H] button on the browser to return to the home page. on the bounty click [color=red]>>> report finding <<<[/color]. you can navigate back to this page after opening the form.
+
+[b]5.[/b] fill in the form. the details are:
+   • endpoint: the page you captured
+   • class: [b]Authentication Bypass[/b]
+   • specifics: [b]Missing Authentication Check[/b]
+   • proof: the page capture
+
+[b]6.[/b] submit and get paid
+
+[i]once you finish this, head back to the program list to try a real target.[/i]
+
+[color=#00000000] TODO: take down /backstage.html before launch, it's only for staff! - admin [/color]"
+background_colour = Color(0, 0, 0, 1)
+metadata/_custom_type_script = "uid://ckg4qnkq81pmh"

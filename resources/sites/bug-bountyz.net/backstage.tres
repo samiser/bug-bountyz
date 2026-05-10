@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Page" format=3 uid="uid://bxtnab2c7mh3c"]
+
+[ext_resource type="Script" uid="uid://ckg4qnkq81pmh" path="res://scripts/page.gd" id="1_bks"]
+
+[resource]
+script = ExtResource("1_bks")
+content = "[center][font_size=18][color=red][b]bug-bountyz.net STAFF ONLY[/b][/color][/font_size][/center]
+
+shhhh!!! this is the staff lounge.
+
+if you're reading this and don't work for bug-bountyz... you found a page you weren't supposed to. how did you even get here???
+
+ - the bug-bountyz team"
+background_colour = Color(0, 0, 0, 1)
+metadata/_custom_type_script = "uid://ckg4qnkq81pmh"

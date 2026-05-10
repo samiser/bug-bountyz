@@ -25,3 +25,11 @@ func get_all() -> Array[Bounty]:
 
 func get_by_id(id: String) -> Bounty:
 	return _by_id.get(id)
+
+func find_by_site(domain: String) -> Bounty:
+	for b in _all:
+		if b.target_page == null:
+			continue
+		if Url.site_of(Url.to_url(b.target_page)) == domain:
+			return b
+	return null

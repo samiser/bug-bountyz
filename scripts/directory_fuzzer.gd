@@ -51,7 +51,9 @@ func _on_fuzz_pressed() -> void:
 	_last_output_tags = ["fuzz", domain]
 
 	output_label.text = output
-	Engagement.add_detection(5)
+	var bounty := Bounties.find_by_site(domain)
+	if bounty != null:
+		Engagement.add_detection(bounty.id, 10)
 	_update_capture_button()
 	Sound.play_click()
 

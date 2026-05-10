@@ -51,8 +51,12 @@ func _on_scan_pressed() -> void:
 	_last_output_tags = ["port-scan", domain]
 
 	output_label.text = output
-	detection_label.text = "detection: +5%"
-	Engagement.add_detection(5)
+	var bounty := Bounties.find_by_site(domain)
+	if bounty != null:
+		Engagement.add_detection(bounty.id, 5)
+		detection_label.text = "detection +5%"
+	else:
+		detection_label.text = ""
 	_update_capture_button()
 	Sound.play_click()
 

@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://c72mw4r1vwo1x" path="res://scripts/bounty.gd" id="1_17wce"]
 [ext_resource type="Script" uid="uid://ox62ws8mcbvk" path="res://scripts/finding.gd" id="1_g1uqv"]
 [ext_resource type="Resource" uid="uid://babrl7eo7oadj" path="res://resources/sites/nansrecipes.com/index.tres" id="2_axno1"]
-[ext_resource type="Resource" uid="uid://c63smvcu7qq5i" path="res://resources/findings/apache_rce.tres" id="2_qgmit"]
-[ext_resource type="Resource" path="res://resources/findings/missing_auth.tres" id="3_qgmit"]
+[ext_resource type="Resource" uid="uid://c63smvcu7qq5i" path="res://resources/findings/nansrecipes.com/apache_rce.tres" id="2_qgmit"]
+[ext_resource type="Resource" uid="uid://doml5vebwo5ox" path="res://resources/findings/nansrecipes.com/missing_auth.tres" id="3_qgmit"]
 
 [resource]
 script = ExtResource("1_17wce")
