@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Finding" format=3 uid="uid://bma8x7r3kp2vn"]
+
+[ext_resource type="Script" uid="uid://ox62ws8mcbvk" path="res://scripts/finding.gd" id="1_ma1"]
+
+[resource]
+script = ExtResource("1_ma1")
+endpoint = "nansrecipes.com/secret_recipes.html"
+vuln_class = "Authentication Bypass"
+specifics = "Missing Authentication Check"
+severity = "Low"
+payout = 100
+required_poc = Array[String](["view-source", "nansrecipes.com/secret_recipes.html"])
+metadata/_custom_type_script = "uid://ox62ws8mcbvk"

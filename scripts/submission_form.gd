@@ -90,6 +90,9 @@ func _refresh_specifics() -> void:
 		for cve in Cves.get_all():
 			if cve.vuln_class == picked_class:
 				specifics_dropdown.add_item(cve.id)
+		if Vulns.SPECIFICS_BY_CLASS.has(picked_class):
+			for spec in Vulns.SPECIFICS_BY_CLASS[picked_class]:
+				specifics_dropdown.add_item(spec)
 	specifics_dropdown.selected = 0
 	specifics_dropdown.disabled = class_dropdown.selected <= 0
 

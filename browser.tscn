@@ -91,6 +91,10 @@ vertical_alignment = 1
 layout_mode = 2
 text = "HISTORY"
 
+[node name="SourceButton" type="Button" parent="VBoxContainer/control_panel/HBoxContainer" unique_id=1245828596]
+layout_mode = 2
+text = "View Source"
+
 [node name="page_panel" type="Control" parent="VBoxContainer" unique_id=287934902]
 layout_mode = 2
 size_flags_vertical = 3
@@ -122,3 +126,40 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
+
+[node name="source_panel" type="Control" parent="VBoxContainer" unique_id=312247582]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="background_colour" type="ColorRect" parent="VBoxContainer/source_panel" unique_id=401209543]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.41215247, 0.41215247, 0.41215247, 1)
+
+[node name="content_label" type="RichTextLabel" parent="VBoxContainer/source_panel" unique_id=1010894533]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+
+[node name="CaptureButton" type="Button" parent="." unique_id=870675449]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -71.0
+offset_top = -31.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Capture"

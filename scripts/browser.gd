@@ -4,6 +4,7 @@ var current_page : Page
 
 @export var homepage : Page
 
+@onready var page_panel: Control = $VBoxContainer/page_panel
 @onready var content_label: RichTextLabel = $VBoxContainer/page_panel/content_label
 @onready var background_image: TextureRect = $VBoxContainer/page_panel/background_image
 @onready var background_colour: ColorRect = $VBoxContainer/page_panel/background_colour
@@ -17,6 +18,11 @@ var current_page : Page
 
 @onready var page_music: AudioStreamPlayer = $page_music
 
+@onready var source_panel: Control = $VBoxContainer/source_panel
+@onready var source_content_label: RichTextLabel = $VBoxContainer/source_panel/content_label
+@onready var source_button: Button = $VBoxContainer/control_panel/HBoxContainer/SourceButton
+@onready var source_capture_button: Button = $CaptureButton
+
 var current_history_index : int = 0
 var history : Array[String]
 
@@ -28,7 +34,13 @@ func _ready() -> void:
 	home_button.button_down.connect(func() : _load_page(homepage))
 	history_button.button_down.connect(_view_history)
 	refresh_button.button_down.connect(_refresh)
-	
+	source_button.button_down.connect(_toggle_source)
+	source_capture_button.pressed.connect(_capture_source)
+	Engagement.capture_added.connect(_on_capture_added)
+
+	source_panel.visible = false
+	source_content_label.bbcode_enabled = false
+
 	_load_page(homepage)
 
 func _process(delta: float) -> void:
@@ -94,10 +106,57 @@ func _load_page(page : Page, add_history : bool = true) -> void:
 	background_colour.color = page.background_colour
 	
 	current_page = page
-	
+
 	content_label.scroll_to_line(0)
-	
+
+	if source_panel.visible:
+		source_content_label.text = page.content
+	_update_source_capture_button()
+
 	Sound.play_click()
+
+func _toggle_source() -> void:
+	if current_page == null:
+		Sound.play_error()
+		return
+	if source_panel.visible:
+		source_panel.visible = false
+		page_panel.visible = true
+	else:
+		source_content_label.text = current_page.content
+		source_panel.visible = true
+		page_panel.visible = false
+		_update_source_capture_button()
+	Sound.play_click()
+
+func _capture_source() -> void:
+	if current_page == null:
+		Sound.play_error()
+		return
+	Engagement.add_capture(
+		current_page.content,
+		"view_source",
+		_source_tags(current_page),
+	)
+	Sound.play_click()
+
+func _source_tags(page: Page) -> Array[String]:
+	return ["view-source", Url.to_url(page)]
+
+func _update_source_capture_button() -> void:
+	if current_page == null:
+		source_capture_button.disabled = true
+		source_capture_button.text = "capture source"
+		return
+	if Engagement.has_capture("view_source", _source_tags(current_page)):
+		source_capture_button.disabled = true
+		source_capture_button.text = "captured ✓"
+	else:
+		source_capture_button.disabled = false
+		source_capture_button.text = "capture source"
+
+func _on_capture_added(_capture: Dictionary) -> void:
+	_update_source_capture_button()
 
 func _view_history() -> void:
 	var history_page : Page = Page.new()
