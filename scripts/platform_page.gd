@@ -8,6 +8,8 @@ const PAGE_TEMPLATE := """[center][rainbow][font_size=28]★ b u g - b o u n t y
 
 [color=gray]─────────────────────────────────────────────────────────────────────[/color]
 
+[center][color=lime]bounties paid: $%d[/color][/center]
+
 [color=hotpink][font_size=18]>> open programs[/font_size][/color]
 
 %s
@@ -22,7 +24,7 @@ payout: $%d–$%d - difficulty: %s
 
 func get_content() -> String:
 	if bounties.is_empty():
-		return PAGE_TEMPLATE % "[i]no programs available.[/i]"
+		return PAGE_TEMPLATE % [Engagement.money, "[i]no programs available.[/i]"]
 
 	var entries : Array[String] = []
 	for b in bounties:
@@ -35,4 +37,4 @@ func get_content() -> String:
 			b.scope,
 			Url.to_url(b.target_page),
 		])
-	return PAGE_TEMPLATE % "\n\n".join(entries)
+	return PAGE_TEMPLATE % [Engagement.money, "\n\n".join(entries)]

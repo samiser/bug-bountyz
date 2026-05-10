@@ -2,11 +2,14 @@ extends Node
 
 var captures : Array[Dictionary] = []
 var detection : int = 0
+var money : int = 0
 var discovered_pages : Array[String] = []
 var discovered_sites : Array[String] = []
 var read_cves : Array[String] = []
+var claimed_findings : Array[String] = []
 
 signal detection_changed(new_value: int)
+signal money_changed(new_value: int)
 signal capture_added(capture: Dictionary)
 signal page_discovered(url: String)
 signal site_discovered(domain: String)
@@ -54,3 +57,16 @@ func read_cve(id: String) -> void:
 	if not read_cves.has(id):
 		read_cves.append(id)
 		cve_read.emit(id)
+
+func add_money(amount: int) -> void:
+	money += amount
+	money_changed.emit(money)
+
+func claim_finding(key: String) -> bool:
+	if claimed_findings.has(key):
+		return false
+	claimed_findings.append(key)
+	return true
+
+func is_finding_claimed(key: String) -> bool:
+	return claimed_findings.has(key)

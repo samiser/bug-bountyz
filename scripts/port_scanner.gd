@@ -48,7 +48,7 @@ func _on_scan_pressed() -> void:
 
 	var output := _format_scan(domain, site.fingerprints)
 	_last_output = output
-	_last_output_tags = ["port-scan", "fingerprint", domain]
+	_last_output_tags = ["port-scan", domain]
 
 	output_label.text = output
 	detection_label.text = "detection: +5%"

@@ -21,6 +21,8 @@ Engagement="*uid://cwxr1n1pw1shg"
 Sound="*res://scripts/sound.gd"
 Url="*res://scripts/url.gd"
 Cves="*res://scripts/cves.gd"
+Bounties="*res://scripts/bounties.gd"
+Vulns="*res://scripts/vulns.gd"
 
 [display]
 
