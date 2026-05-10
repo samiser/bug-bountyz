@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cdcryaka2yq80"]
+
+[ext_resource type="Script" uid="uid://um3qbdjd67ox" path="res://scripts/cve_directory.gd" id="1_cd"]
+
+[node name="CveDirectory" type="HSplitContainer" unique_id=2300001 node_paths=PackedStringArray("list", "detail")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+split_offsets = PackedInt32Array(130)
+split_offset = 130
+script = ExtResource("1_cd")
+list = NodePath("ItemList")
+detail = NodePath("RichTextLabel")
+
+[node name="ItemList" type="ItemList" parent="." unique_id=2300002]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=2300003]
+layout_mode = 2
+bbcode_enabled = true

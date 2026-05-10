@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CVE" format=3 uid="uid://bgsyd317a0s3a"]
+
+[ext_resource type="Script" uid="uid://b84gjd8fk4x5j" path="res://scripts/cve.gd" id="1_7t8a7"]
+
+[resource]
+script = ExtResource("1_7t8a7")
+id = "CVE-2002-0840"
+vuln_class = "Cross-Site Scripting"
+severity = "Medium"
+affected_fingerprint = "Apache 2.0.40"
+description = "Cross-site scripting vulnerability in the default error page of apache 2.0 through 2.0.42 allows remote attackers to inject arbitrary script via the hostname header."
+metadata/_custom_type_script = "uid://b84gjd8fk4x5j"

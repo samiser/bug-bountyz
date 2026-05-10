@@ -4,6 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://b7m0wy1o3k83b" path="res://audio/pc_fan_loop.wav" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://k1b3xm4saaks" path="res://port_scanner.tscn" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://cnbkxh3pq8m4w" path="res://captures_notebook.tscn" id="3_cn"]
+[ext_resource type="PackedScene" uid="uid://cdcryaka2yq80" path="res://cve_directory.tscn" id="4_cd"]
 [ext_resource type="Texture2D" uid="uid://dwmkwc3l6puik" path="res://wallpaper.png" id="5_lquwl"]
 
 [node name="Main" type="Control" unique_id=1822029631]
@@ -43,7 +44,7 @@ text = "history:"
 oversampling_override = 1.0
 title = "Port Scanner"
 initial_position = 1
-size = Vector2i(500, 500)
+size = Vector2i(300, 300)
 
 [node name="PortScanner" parent="Window3" unique_id=1864047590 instance=ExtResource("2_h2yge")]
 
@@ -51,9 +52,18 @@ size = Vector2i(500, 500)
 oversampling_override = 1.0
 title = "Captures"
 initial_position = 1
-size = Vector2i(600, 400)
+size = Vector2i(475, 300)
 
 [node name="CapturesNotebook" parent="Window4" unique_id=1700000002 instance=ExtResource("3_cn")]
+split_offsets = PackedInt32Array(150)
+
+[node name="Window5" type="Window" parent="." unique_id=1700000003]
+oversampling_override = 1.0
+title = "CVE Directory"
+initial_position = 1
+size = Vector2i(440, 250)
+
+[node name="CveDirectory" parent="Window5" unique_id=1700000004 instance=ExtResource("4_cd")]
 split_offsets = PackedInt32Array(150)
 
 [node name="Ambience" type="AudioStreamPlayer2D" parent="." unique_id=2120516250]

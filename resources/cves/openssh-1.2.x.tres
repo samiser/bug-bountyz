@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CVE" format=3 uid="uid://utleyx2wpfui"]
+
+[ext_resource type="Script" uid="uid://b84gjd8fk4x5j" path="res://scripts/cve.gd" id="1_cd4su"]
+
+[resource]
+script = ExtResource("1_cd4su")
+id = "CVE-2001-0144"
+vuln_class = "Remote Code Execution"
+severity = "Critical"
+affected_fingerprint = "OpenSSH 1.2.x"
+description = "Buffer overflow in CRC-32 compensation attack detector allows remote attackers to execute arbitrary commands on an SSH server or client."
+metadata/_custom_type_script = "uid://b84gjd8fk4x5j"

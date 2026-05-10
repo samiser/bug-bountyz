@@ -4,11 +4,13 @@ var captures : Array[Dictionary] = []
 var detection : int = 0
 var discovered_pages : Array[String] = []
 var discovered_sites : Array[String] = []
+var read_cves : Array[String] = []
 
 signal detection_changed(new_value: int)
 signal capture_added(capture: Dictionary)
 signal page_discovered(url: String)
 signal site_discovered(domain: String)
+signal cve_read(id: String)
 
 func add_detection(amount: int) -> void:
 	detection += amount
@@ -45,3 +47,10 @@ func discover_site(domain: String) -> void:
 	if not discovered_sites.has(domain):
 		discovered_sites.append(domain)
 		site_discovered.emit(domain)
+
+func read_cve(id: String) -> void:
+	if id.is_empty():
+		return
+	if not read_cves.has(id):
+		read_cves.append(id)
+		cve_read.emit(id)
