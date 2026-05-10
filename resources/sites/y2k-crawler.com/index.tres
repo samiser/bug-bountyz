@@ -7,15 +7,14 @@
 [resource]
 script = ExtResource("1_skyko")
 path = "index.html"
-content = "[center][img]res://images/img_y2k_logo.jpg[/img][/center]
-[outline_size=1][outline_color=WHITE][color=BLACK]
+content = "[center][img]res://images/img_y2k_logo.jpg[/img][/center][bgcolor=BLACK][color=WHITE]
 23:59, December 31st, 1999.
 
 Remember to turn your computer off before midnight, or else the Millennium Bug will kick ass until every file is destroyed.
 Dungeon Crawling Action!
 
 You take control of the Millennium Bug, moving through a computer to do as much damage as possible. Familiar foes and dangerous obstacles will try their best to stop you, from Firewalls to minefields. Be efficient with your destruction, as each item consumes your energy supply.
-[/color][/outline_color]"
+[/color][/bgcolor]"
 background_img = ExtResource("1_2avd3")
 background_colour = Color(0, 0, 0, 1)
 music = ExtResource("2_0d6ji")
