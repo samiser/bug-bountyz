@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Page" format=3 uid="uid://cgsecnjdonpk0"]
+
+[ext_resource type="Script" uid="uid://ckg4qnkq81pmh" path="res://scripts/page.gd" id="1_ntlry"]
+
+[resource]
+script = ExtResource("1_ntlry")
+path = "about_nan.html"
+content = "[center][font=res://fonts/font_comic.TTF][font_size=20]ABOUT NAN[/font_size][/font]
+[url=/index][color=BLUE]HOME PAGE[/color][/url]
+[/center]"
+metadata/_custom_type_script = "uid://ckg4qnkq81pmh"
