@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="Bounty" format=3 uid="uid://maoy6qisc4yb"]
 
 [ext_resource type="Script" uid="uid://c72mw4r1vwo1x" path="res://scripts/bounty.gd" id="1_bnty"]
-[ext_resource type="Resource" uid="uid://babrl7eo7oadj" path="res://resources/sites/nansrecipes.com/index.tres" id="2_nans"]
+[ext_resource type="Resource" uid="uid://xlglopd7cc1h" path="res://resources/sites/y2k-crawler.com/index.tres" id="2_bvv8l"]
 
 [resource]
 script = ExtResource("1_bnty")
-program_name = "Nan's Recipes"
-target_page = ExtResource("2_nans")
+program_name = "Y2K Crawler"
+target_page = ExtResource("2_bvv8l")
 payout_min = 100
 payout_max = 500
-scope = "My grandson made me this website and i have no idea how it works.. I'm worried there might be some issues with it!"
+scope = "game fucked up"

@@ -7,4 +7,5 @@
 [resource]
 script = ExtResource("1_pp")
 bounties = Array[ExtResource("1_dsk1c")]([ExtResource("2_e3lvg")])
+background_colour = Color(0, 0, 0, 1)
 metadata/_custom_type_search = "Resource"

@@ -1,11 +1,16 @@
-extends RichTextLabel
+extends Control
 
 @export var homepage : Page
 @export var history_label : RichTextLabel
 
+@onready var content_label: RichTextLabel = $content_label
+@onready var background_image: TextureRect = $background_image
+@onready var background_colour: ColorRect = $background_colour
+
 var history : Array[String]
 
 func _ready() -> void:
+	content_label.meta_clicked.connect(_on_meta_clicked)
 	_load_page(homepage)
 
 func _process(delta: float) -> void:
@@ -34,8 +39,13 @@ func _load_page(page : Page, add_history : bool = true) -> void:
 	if add_history: history.append(url)
 	_display_history()
 
-	text = ""
-	append_text(page.get_content())
+	content_label.text = ""
+	content_label.append_text(page.get_content())
+	
+	background_image.visible = page.background_img != null
+	if page.background_img:
+		background_image.texture = page.background_img
+	background_colour.color = page.background_colour
 
 func _display_history() -> void:
 	history_label.text = ""
@@ -50,5 +60,6 @@ func _on_meta_clicked(meta: String) -> void:
 		print("broken link: %s" % meta)
 		Sound.play_error()
 		return
+	
 	_load_page(new_page)
 	Sound.play_click()
