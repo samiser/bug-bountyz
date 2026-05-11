@@ -1,15 +1,29 @@
 [gd_resource type="Resource" script_class="Page" format=3 uid="uid://bxtnab2c7mh3c"]
 
+[ext_resource type="AudioStream" uid="uid://d00g6b47vx1r8" path="res://audio/music/detective_music.wav" id="1_4y33x"]
 [ext_resource type="Script" uid="uid://ckg4qnkq81pmh" path="res://scripts/page.gd" id="1_bks"]
 
 [resource]
 script = ExtResource("1_bks")
-content = "[center][font_size=18][color=red][b]bug-bountyz.net STAFF ONLY[/b][/color][/font_size][/center]
+content = "
+[center][font_size=18][color=red][b]bug-bountyz.net STAFF ONLY[/b][/color][/font_size][/center]
 
-shhhh!!! this is the staff lounge.
+whoa! looks like we're somewhere we're not supposed to be, you can save some evidence of this by clicking the [b]capture[/b] button. this saves the page in your captures index.
 
-if you're reading this and don't work for bug-bountyz... you found a page you weren't supposed to. how did you even get here???
+now you have something to report and you have evidence to back it up. you can report issues for each program from their report finding button, try clicking this one: [url=action://report/bountyz-001][color=red]>>> report finding <<<[/color][/url]
+
+on this form you can select an endpoint, a class and specifics. you can read more about what those are in your wiki, but in this case you'll want to pick:
+
+   -endpoint: [b]bug-bountyz.net/backstage.html[/b]
+   -class: [b]Authentication Bypass[/b]
+   -specifics: [b]Missing Authentication Check[/b]
+   -proof: the page capture
+
+now you can submit, claim your bounty, and continue hunting! as you earn more money you'll unlock more bounty programs and can buy more tools, which will enable you to find even more bugs!
+
+[i]head back to the [url=/]program list[/url] to try a real target. happy hunting![/i]
 
  - the bug-bountyz team"
 background_colour = Color(0, 0, 0, 1)
+music = ExtResource("1_4y33x")
 metadata/_custom_type_script = "uid://ckg4qnkq81pmh"
