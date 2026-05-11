@@ -4,8 +4,7 @@
 
 [resource]
 script = ExtResource("1_3ub3e")
-path = "index.html"
-content = "[center][font=res://fonts/font_comic.TTF][font_size=20][hint=\"made by Jimmy!\"]WELCOME TO nansrecipes.com[/hint][/font_size][/font]
+content = "[center][font_size=20][hint=\"made by Jimmy!\"]WELCOME TO nansrecipes.com[/hint][/font_size]
 [url=/about_nan][color=BLUE]ABOUT NAN[/color][/url]
 [b]Recipe of the day:[/b]
 [img]res://images/img_muffins.jpg[/img]

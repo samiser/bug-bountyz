@@ -5,8 +5,7 @@
 
 [resource]
 script = ExtResource("1_ntlry")
-path = "about_nan.html"
-content = "[center][font=res://fonts/font_comic.TTF][font_size=20]ABOUT NAN[/font_size][/font]
+content = "[center][font_size=20]ABOUT NAN[/font_size]
 [url=/index][color=BLUE]HOME PAGE[/color][/url]
 [/center]"
 background_img = ExtResource("1_cfh5r")

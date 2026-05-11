@@ -3,7 +3,8 @@ extends Page
 
 @export var bounties : Array[Bounty]
 
-const PAGE_TEMPLATE := """[center][rainbow][font_size=28]* b u g - b o u n t y z *[/font_size][/rainbow][/center]
+const PAGE_TEMPLATE := """ 
+[center][rainbow][font_size=28][b]* b u g - b o u n t y z *[/b][/font_size][/rainbow][/center]
 [center][i]the premier vulnerability disclosure platform on the world wide web[/i][/center]
 
 [color=gray]========================================================[/color]
