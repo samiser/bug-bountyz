@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Site" format=3 uid="uid://cy2ksite8nq3v"]
+
+[ext_resource type="Script" uid="uid://cxbe6dwl3fs0w" path="res://scripts/site.gd" id="1_y2ks"]
+
+[resource]
+script = ExtResource("1_y2ks")
+domain = "y2k-crawler.com"
+fingerprints = Array[String](["22/tcp ssh OpenSSH 3.5", "80/tcp http IIS 4.0", "27015/udp y2k-crawler-server qa-build-0.4"])
+metadata/_custom_type_script = "uid://cxbe6dwl3fs0w"

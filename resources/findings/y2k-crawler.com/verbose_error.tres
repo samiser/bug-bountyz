@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Finding" format=3 uid="uid://by2kverr3pq2x"]
+
+[ext_resource type="Script" uid="uid://ox62ws8mcbvk" path="res://scripts/finding.gd" id="1_verr"]
+
+[resource]
+script = ExtResource("1_verr")
+endpoint = "y2k-crawler.com/leaderboard.html"
+vuln_class = "Information Disclosure"
+specifics = "Verbose Error Message"
+severity = "Low"
+payout = 100
+required_poc = Array[String](["view-source", "y2k-crawler.com/leaderboard.html"])
+metadata/_custom_type_script = "uid://ox62ws8mcbvk"

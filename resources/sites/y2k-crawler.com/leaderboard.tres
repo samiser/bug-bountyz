@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Page" format=3 uid="uid://by2klead4mqxn"]
+
+[ext_resource type="Script" uid="uid://ckg4qnkq81pmh" path="res://scripts/page.gd" id="1_lead"]
+
+[resource]
+script = ExtResource("1_lead")
+content = "[center][font_size=20][b]Y2K CRAWLER WEEKLY HIGH SCORES[/b][/font_size][/center]
+
+Warning: mysql_connect(): Access denied for user 'leaderboard'@'localhost' (using password: YES) in /var/www/cgi-bin/leaderboard.php on line 14
+Warning: mysql_query(): supplied argument is not a valid MySQL-Link resource in /var/www/cgi-bin/leaderboard.php on line 22
+Warning: mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /var/www/cgi-bin/leaderboard.php on line 23
+Fatal error: Call to undefined function: render_score_table() in /var/www/cgi-bin/leaderboard.php on line 87
+
+[i]powered by php 4.3.0[/i]"
+background_colour = Color(0.1527184, 0.4697261, 0.11365404, 1)
+metadata/_custom_type_script = "uid://ckg4qnkq81pmh"

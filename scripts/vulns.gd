@@ -18,6 +18,7 @@ const SPECIFICS_BY_CLASS : Dictionary = {
 		"Sensitive File Exposed",
 		"Verbose Error Message",
 		"Source Code Disclosure",
+		"Internal Service Exposed",
 	],
 	"Cross-Site Scripting": [
 		"Reflected XSS",

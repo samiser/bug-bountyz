@@ -65,10 +65,15 @@ func _refresh_endpoints() -> void:
 	endpoint_dropdown.clear()
 	endpoint_dropdown.add_item("(select endpoint)")
 	endpoint_dropdown.set_item_disabled(0, true)
-	for site in Engagement.discovered_sites:
-		endpoint_dropdown.add_item(site)
-	for url in Engagement.discovered_pages:
-		endpoint_dropdown.add_item(url)
+	if bounty_dropdown.selected > 0:
+		var bounty : Bounty = Bounties.get_all()[bounty_dropdown.selected - 1]
+		var bounty_site := Url.site_of(Url.to_url(bounty.target_page))
+		for site in Engagement.discovered_sites:
+			if site == bounty_site:
+				endpoint_dropdown.add_item(site)
+		for url in Engagement.discovered_pages:
+			if Url.site_of(url) == bounty_site:
+				endpoint_dropdown.add_item(url)
 	endpoint_dropdown.selected = 0
 	endpoint_dropdown.disabled = bounty_dropdown.selected <= 0
 

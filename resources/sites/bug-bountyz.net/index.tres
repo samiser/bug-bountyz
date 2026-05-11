@@ -5,9 +5,11 @@
 [ext_resource type="Resource" uid="uid://maoy6qisc4yb" path="res://resources/bounties/y2k_bounty.tres" id="2_e3lvg"]
 [ext_resource type="Resource" uid="uid://dw5smtxbp4yea" path="res://resources/bounties/nans_bounty.tres" id="2_m3kkv"]
 [ext_resource type="Resource" uid="uid://n3oev0uffgl4" path="res://resources/bounties/bug_bountyz_onboarding.tres" id="2_rbbwu"]
+[ext_resource type="AudioStream" uid="uid://d00g6b47vx1r8" path="res://audio/music/detective_music.wav" id="5_wma6o"]
 
 [resource]
 script = ExtResource("1_pp")
 bounties = Array[ExtResource("1_dsk1c")]([ExtResource("2_rbbwu"), ExtResource("2_m3kkv"), ExtResource("2_e3lvg")])
 background_colour = Color(0, 0, 0, 1)
+music = ExtResource("5_wma6o")
 metadata/_custom_type_search = "Resource"

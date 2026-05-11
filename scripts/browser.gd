@@ -145,14 +145,14 @@ func _source_tags(page: Page) -> Array[String]:
 func _update_source_capture_button() -> void:
 	if current_page == null:
 		source_capture_button.disabled = true
-		source_capture_button.text = "capture source"
+		source_capture_button.text = "capture page"
 		return
 	if Engagement.has_capture("view_source", _source_tags(current_page)):
 		source_capture_button.disabled = true
 		source_capture_button.text = "captured ✓"
 	else:
 		source_capture_button.disabled = false
-		source_capture_button.text = "capture source"
+		source_capture_button.text = "capture page"
 
 func _on_capture_added(_capture: Dictionary) -> void:
 	_update_source_capture_button()
