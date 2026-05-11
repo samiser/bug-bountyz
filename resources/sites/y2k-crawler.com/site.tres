@@ -1,9 +1,13 @@
 [gd_resource type="Resource" script_class="Site" format=3 uid="uid://cy2ksite8nq3v"]
 
+[ext_resource type="Script" uid="uid://ckg4qnkq81pmh" path="res://scripts/page.gd" id="1_8adtf"]
 [ext_resource type="Script" uid="uid://cxbe6dwl3fs0w" path="res://scripts/site.gd" id="1_y2ks"]
+[ext_resource type="Resource" uid="uid://xlglopd7cc1h" path="res://resources/sites/y2k-crawler.com/index.tres" id="2_tsbw3"]
+[ext_resource type="Resource" uid="uid://by2klead4mqxn" path="res://resources/sites/y2k-crawler.com/leaderboard.tres" id="3_ungik"]
 
 [resource]
 script = ExtResource("1_y2ks")
 domain = "y2k-crawler.com"
 fingerprints = Array[String](["22/tcp ssh OpenSSH 3.5", "80/tcp http IIS 4.0", "27015/udp y2k-crawler-server qa-build-0.4"])
+pages = Array[ExtResource("1_8adtf")]([ExtResource("2_tsbw3"), ExtResource("3_ungik")])
 metadata/_custom_type_script = "uid://cxbe6dwl3fs0w"

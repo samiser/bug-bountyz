@@ -34,8 +34,7 @@ func _on_scan_pressed() -> void:
 		return
 
 	var domain := target_dropdown.get_item_text(idx)
-	var site_path := Url.site_resource_path(domain)
-	var site : Site = load(site_path) if ResourceLoader.exists(site_path) else null
+	var site : Site = Sites.get_by_domain(domain)
 	print("scanning %s" % domain)
 
 	if site == null or site.fingerprints.is_empty():

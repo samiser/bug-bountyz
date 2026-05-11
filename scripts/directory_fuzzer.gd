@@ -5,8 +5,6 @@ extends VBoxContainer
 @export var output_label : RichTextLabel
 @export var capture_button : Button
 
-const SITES_ROOT := "res://resources/sites/"
-
 var _last_output : String = ""
 var _last_output_tags : Array[String] = []
 
@@ -35,8 +33,12 @@ func _on_fuzz_pressed() -> void:
 		return
 
 	var domain := target_dropdown.get_item_text(idx)
+	var site : Site = Sites.get_by_domain(domain)
 	var found : Array[String] = []
-	_scan_dir(SITES_ROOT + domain + "/", found)
+	if site != null:
+		for page in site.pages:
+			if page != null:
+				found.append(Url.to_url(page))
 
 	if found.is_empty():
 		output_label.text = "[i]no paths found.[/i]"
@@ -56,19 +58,6 @@ func _on_fuzz_pressed() -> void:
 		Engagement.add_detection(bounty.id, 10)
 	_update_capture_button()
 	Sound.play_click()
-
-func _scan_dir(dir_path: String, found: Array[String]) -> void:
-	var dir := DirAccess.open(dir_path)
-	if dir == null:
-		return
-	for file_name in dir.get_files():
-		if not file_name.ends_with(".tres"):
-			continue
-		var resource = load(dir_path + file_name)
-		if resource is Page:
-			found.append(Url.to_url(resource))
-	for sub in dir.get_directories():
-		_scan_dir(dir_path + sub + "/", found)
 
 func _format_output(target: String, paths: Array[String]) -> String:
 	var lines := ["[code]> fuzzing " + target + "...", ""]

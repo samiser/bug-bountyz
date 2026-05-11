@@ -23,9 +23,12 @@ Url="*res://scripts/url.gd"
 Cves="*res://scripts/cves.gd"
 Bounties="*res://scripts/bounties.gd"
 Vulns="*res://scripts/vulns.gd"
+Sites="*res://scripts/sites.gd"
 
 [display]
 
+window/size/viewport_width=1366
+window/size/viewport_height=768
 window/stretch/mode="canvas_items"
 
 [input]

@@ -1,9 +1,14 @@
 [gd_resource type="Resource" script_class="Site" format=3 uid="uid://bgepechl8qeq4"]
 
+[ext_resource type="Script" uid="uid://ckg4qnkq81pmh" path="res://scripts/page.gd" id="1_7w3tj"]
 [ext_resource type="Script" uid="uid://cxbe6dwl3fs0w" path="res://scripts/site.gd" id="1_t3uso"]
+[ext_resource type="Resource" uid="uid://babrl7eo7oadj" path="res://resources/sites/nansrecipes.com/index.tres" id="2_c75gj"]
+[ext_resource type="Resource" uid="uid://cgsecnjdonpk0" path="res://resources/sites/nansrecipes.com/about_nan.tres" id="3_3yr6h"]
+[ext_resource type="Resource" uid="uid://drs74f3jrdjs3" path="res://resources/sites/nansrecipes.com/secret_recipes.tres" id="4_8fj1m"]
 
 [resource]
 script = ExtResource("1_t3uso")
 domain = "nansrecipes.com"
-fingerprints = Array[String](["22/tcp ssh OpenSSH 7.4", "80/tcp http Apache 1.3.27", "443/tcp http Apache 1.3.27"])
+fingerprints = Array[String](["22/tcp ssh OpenSSH 3.6.1p2", "80/tcp http Apache 1.3.27", "443/tcp http Apache 1.3.27"])
+pages = Array[ExtResource("1_7w3tj")]([ExtResource("2_c75gj"), ExtResource("3_3yr6h"), ExtResource("4_8fj1m")])
 metadata/_custom_type_script = "uid://cxbe6dwl3fs0w"
