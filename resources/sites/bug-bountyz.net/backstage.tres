@@ -8,11 +8,11 @@ script = ExtResource("1_bks")
 content = "
 [center][font_size=18][color=red][b]bug-bountyz.net STAFF ONLY[/b][/color][/font_size][/center]
 
-whoa! looks like we're somewhere we're not supposed to be, you can save some evidence of this by clicking the [b]capture[/b] button. this saves the page in your captures index.
+whoa! looks like we're somewhere we're not supposed to be, you can save evidence of this by clicking the [b]capture[/b] button. this saves the page in your [url=action://open_toolbox/captures][color=cyan]captures index[/color][/url].
 
 now you have something to report and you have evidence to back it up. you can report issues for each program from their report finding button, try clicking this one: [url=action://report/bountyz-001][color=red]>>> report finding <<<[/color][/url]
 
-on this form you can select an endpoint, a class and specifics. you can read more about what those are in your wiki, but in this case you'll want to pick:
+on this form you can select an endpoint, a class and specifics. you can read more about what those are in [url=action://open_wiki/vulns][color=cyan]your wiki[/color][/url], but in this case you'll want to pick:
 
    -endpoint: [b]bug-bountyz.net/backstage.html[/b]
    -class: [b]Authentication Bypass[/b]

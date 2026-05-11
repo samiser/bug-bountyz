@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://k1b3xm4saaks" path="res://port_scanner.tscn" id="1_hf060"]
 [ext_resource type="PackedScene" uid="uid://df0k7r3pq2mxw" path="res://directory_fuzzer.tscn" id="2_hre1t"]
 [ext_resource type="PackedScene" uid="uid://cnbkxh3pq8m4w" path="res://captures_notebook.tscn" id="3_hre1t"]
+[ext_resource type="Script" path="res://scripts/tabbed_window.gd" id="4_tw"]
 
 [node name="Toolbox" type="Control" unique_id=474395757]
 layout_mode = 3
@@ -20,6 +21,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 current_tab = 0
+script = ExtResource("4_tw")
+action_name = "open_toolbox"
 
 [node name="Captures" parent="TabContainer" unique_id=2200001 instance=ExtResource("3_hre1t")]
 layout_mode = 2
