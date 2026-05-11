@@ -1,12 +1,16 @@
 [gd_scene format=3 uid="uid://bk8rj32026cgc"]
 
+[ext_resource type="Script" uid="uid://cp4y013pmrt47" path="res://scripts/window.gd" id="1_4c57u"]
 [ext_resource type="PackedScene" uid="uid://d2adpvcxffyp4" path="res://browser.tscn" id="1_ig7tw"]
 [ext_resource type="AudioStream" uid="uid://b7m0wy1o3k83b" path="res://audio/pc_fan_loop.wav" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://dtn5qqrb7fhya" path="res://toolbox.tscn" id="2_272bh"]
-[ext_resource type="PackedScene" uid="uid://cnbkxh3pq8m4w" path="res://captures_notebook.tscn" id="3_cn"]
-[ext_resource type="PackedScene" uid="uid://cdcryaka2yq80" path="res://cve_directory.tscn" id="4_cd"]
+[ext_resource type="PackedScene" uid="uid://bcmkl8htg5xgb" path="res://wiki.tscn" id="5_5vw27"]
 [ext_resource type="Texture2D" uid="uid://dwmkwc3l6puik" path="res://wallpaper.png" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://bsf3xmqkpw7n2" path="res://submission_form.tscn" id="6_sf"]
+[ext_resource type="PackedScene" uid="uid://cwvchqfkvtok1" path="res://desktop_icon.tscn" id="7_5vw27"]
+[ext_resource type="Texture2D" uid="uid://cs48nvrs0n88s" path="res://images/browser.png" id="9_efxa6"]
+[ext_resource type="Texture2D" uid="uid://dvrucw8h5j672" path="res://images/toolbox.png" id="10_efxa6"]
+[ext_resource type="Texture2D" uid="uid://qbtcvuo54sff" path="res://images/wiki.png" id="11_efxa6"]
 
 [node name="Main" type="Control" unique_id=1822029631]
 layout_mode = 3
@@ -16,49 +20,46 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Window" type="Window" parent="." unique_id=321217614]
-oversampling_override = 1.0
-title = "Browser"
-initial_position = 1
-size = Vector2i(552, 400)
-unresizable = true
-
-[node name="Browser" parent="Window" unique_id=2076547727 instance=ExtResource("1_ig7tw")]
-
-[node name="Window3" type="Window" parent="." unique_id=1959032847]
+[node name="Toolbox" type="Window" parent="." unique_id=1959032847]
 oversampling_override = 1.0
 title = "Toolbox"
 initial_position = 1
-size = Vector2i(300, 300)
+size = Vector2i(425, 340)
+visible = false
+script = ExtResource("1_4c57u")
 
-[node name="Toolbox" parent="Window3" unique_id=474395757 instance=ExtResource("2_272bh")]
+[node name="Toolbox" parent="Toolbox" unique_id=474395757 instance=ExtResource("2_272bh")]
 
-[node name="Window4" type="Window" parent="." unique_id=1700000001]
+[node name="Wiki" type="Window" parent="." unique_id=1148828004]
 oversampling_override = 1.0
-title = "Captures"
+title = "Wiki"
 initial_position = 1
-size = Vector2i(475, 300)
+size = Vector2i(386, 353)
+visible = false
+script = ExtResource("1_4c57u")
 
-[node name="CapturesNotebook" parent="Window4" unique_id=1700000002 instance=ExtResource("3_cn")]
+[node name="Wiki" parent="Wiki" unique_id=215880525 instance=ExtResource("5_5vw27")]
 
-[node name="Window5" type="Window" parent="." unique_id=1700000003]
-oversampling_override = 1.0
-title = "CVE Directory"
-initial_position = 1
-size = Vector2i(440, 250)
-
-[node name="CveDirectory" parent="Window5" unique_id=1700000004 instance=ExtResource("4_cd")]
-split_offsets = PackedInt32Array(150)
-split_offset = 150
-
-[node name="Window6" type="Window" parent="." unique_id=1700000005]
+[node name="SubmissionForm" type="Window" parent="." unique_id=1700000005]
 oversampling_override = 1.0
 title = "Submit Report"
 initial_position = 1
 size = Vector2i(450, 400)
 visible = false
+script = ExtResource("1_4c57u")
 
-[node name="SubmissionForm" parent="Window6" unique_id=1700000006 instance=ExtResource("6_sf")]
+[node name="SubmissionForm" parent="SubmissionForm" unique_id=1700000006 instance=ExtResource("6_sf")]
+
+[node name="Browser" type="Window" parent="." unique_id=321217614]
+oversampling_override = 1.0
+title = "Browser"
+initial_position = 1
+size = Vector2i(552, 400)
+visible = false
+unresizable = true
+script = ExtResource("1_4c57u")
+
+[node name="Browser" parent="Browser" unique_id=2076547727 instance=ExtResource("1_ig7tw")]
 
 [node name="Ambience" type="AudioStreamPlayer2D" parent="." unique_id=2120516250]
 stream = ExtResource("2_0xm2m")
@@ -73,3 +74,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_lquwl")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1415405552]
+layout_mode = 1
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 135.0
+offset_bottom = 509.0
+theme_override_constants/separation = -3
+
+[node name="Browser" parent="VBoxContainer" unique_id=282453733 node_paths=PackedStringArray("window") instance=ExtResource("7_5vw27")]
+layout_mode = 2
+window = NodePath("../../Browser")
+icon = ExtResource("9_efxa6")
+
+[node name="Toolbox" parent="VBoxContainer" unique_id=1217879012 node_paths=PackedStringArray("window") instance=ExtResource("7_5vw27")]
+layout_mode = 2
+window = NodePath("../../Toolbox")
+icon = ExtResource("10_efxa6")
+
+[node name="Wiki" parent="VBoxContainer" unique_id=834584289 node_paths=PackedStringArray("window") instance=ExtResource("7_5vw27")]
+layout_mode = 2
+window = NodePath("../../Wiki")
+icon = ExtResource("11_efxa6")

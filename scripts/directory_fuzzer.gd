@@ -79,7 +79,7 @@ func _update_capture_button() -> void:
 		return
 	if Engagement.has_capture("directory_fuzzer", _last_output_tags):
 		capture_button.disabled = true
-		capture_button.text = "captured ✓"
+		capture_button.text = "captured *"
 	else:
 		capture_button.disabled = false
 		capture_button.text = "capture output"

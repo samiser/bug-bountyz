@@ -5,10 +5,21 @@
 [ext_resource type="Resource" uid="uid://ckfkf46o1mdke" path="res://resources/sites/bug-bountyz.net/index.tres" id="2_sdyr6"]
 [ext_resource type="Resource" uid="uid://d23q7drbir5fy" path="res://resources/sites/bug-bountyz.net/welcome.tres" id="3_ucmb3"]
 [ext_resource type="Resource" uid="uid://bxtnab2c7mh3c" path="res://resources/sites/bug-bountyz.net/backstage.tres" id="4_ucmb3"]
+[ext_resource type="FontFile" uid="uid://cb7k02g7wwbo2" path="res://fonts/Liberation Mono/LiberationMono-Regular.ttf" id="6_gaaj4"]
+[ext_resource type="FontFile" uid="uid://ck2d8o043cpkk" path="res://fonts/Liberation Mono/LiberationMono-Bold.ttf" id="6_q40ag"]
+[ext_resource type="FontFile" uid="uid://pbrls8xad74x" path="res://fonts/Liberation Mono/LiberationMono-BoldItalic.ttf" id="7_s5as3"]
+[ext_resource type="FontFile" uid="uid://mm7lifig2m2a" path="res://fonts/Liberation Mono/LiberationMono-Italic.ttf" id="8_if1r4"]
+
+[sub_resource type="Theme" id="Theme_qx82r"]
+default_font = ExtResource("6_gaaj4")
+RichTextLabel/fonts/bold_font = ExtResource("6_q40ag")
+RichTextLabel/fonts/bold_italics_font = ExtResource("7_s5as3")
+RichTextLabel/fonts/italics_font = ExtResource("8_if1r4")
 
 [resource]
 script = ExtResource("2_nxq2y")
 domain = "bug-bountyz.net"
 fingerprints = Array[String](["80/tcp http Apache 2.0.55", "443/tcp http Apache 2.0.55"])
 pages = Array[ExtResource("1_oicgi")]([ExtResource("2_sdyr6"), ExtResource("3_ucmb3"), ExtResource("4_ucmb3")])
+theme = SubResource("Theme_qx82r")
 metadata/_custom_type_script = "uid://cxbe6dwl3fs0w"

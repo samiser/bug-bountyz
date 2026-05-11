@@ -2,7 +2,7 @@ extends Node
 
 const SITES_ROOT := "res://resources/sites/"
 
-# "/x.html" → current_site/x.tres · "d.com/x.html" → d.com/x.tres · "d.com" → d.com/index.tres
+# "/x.html" -> current_site/x.tres, "d.com/x.html" -> d.com/x.tres, "d.com" -> d.com/index.tres
 func resolve(url: String, current_site: String = "") -> String:
 	var domain : String
 	var path : String

@@ -43,7 +43,11 @@ func _ready() -> void:
 	source_panel.visible = false
 	source_content_label.bbcode_enabled = false
 
-	_load_page(homepage)
+	var window := get_parent() as Window
+	if window != null:
+		window.visibility_changed.connect(_on_window_visibility_changed)
+
+	_load_page(homepage, true, false)
 
 func _back() -> void:
 	if history.size() <= 1 or current_history_index == 0:
@@ -73,13 +77,16 @@ func _refresh() -> void:
 	else:
 		Sound.play_error()
 
-func _load_page(page : Page, add_history : bool = true) -> void:
+func _load_page(page : Page, add_history : bool = true, play_sound : bool = true) -> void:
 	var url := Url.to_url(page)
-	
+
 	url_input.text = url
-	
+
 	Engagement.discover_page(url)
 	Engagement.discover_site(Url.site_of(url))
+
+	var site := Sites.get_by_domain(Url.site_of(url))
+	content_label.theme = site.theme if site != null else null
 
 	if add_history and page != current_page:
 		if history.size() - 1 > current_history_index:
@@ -89,20 +96,21 @@ func _load_page(page : Page, add_history : bool = true) -> void:
 
 	content_label.text = ""
 	content_label.append_text(page.get_content())
-	
+
 	if page.music:
 		if page_music.stream != page.music:
 			page_music.stream = page.music
-			page_music.play()
+			if _is_window_visible():
+				page_music.play()
 	else:
 		page_music.stream = null
 		page_music.stop()
-	
+
 	background_image.visible = page.background_img != null
 	if page.background_img:
 		background_image.texture = page.background_img
 	background_colour.color = page.background_colour
-	
+
 	current_page = page
 
 	content_label.scroll_to_line(0)
@@ -112,7 +120,22 @@ func _load_page(page : Page, add_history : bool = true) -> void:
 		page_panel.visible = true
 	_update_source_capture_button()
 
-	Sound.play_click()
+	if play_sound:
+		Sound.play_click()
+
+func _is_window_visible() -> bool:
+	var window := get_parent() as Window
+	return window != null and window.visible
+
+func _on_window_visibility_changed() -> void:
+	var window := get_parent() as Window
+	if window == null:
+		return
+	if window.visible:
+		if page_music.stream != null:
+			page_music.play()
+	else:
+		page_music.stop()
 
 func _toggle_source() -> void:
 	if current_page == null:
@@ -149,7 +172,7 @@ func _update_source_capture_button() -> void:
 		return
 	if Engagement.has_capture("view_source", _source_tags(current_page)):
 		source_capture_button.disabled = true
-		source_capture_button.text = "captured ✓"
+		source_capture_button.text = "captured *"
 	else:
 		source_capture_button.disabled = false
 		source_capture_button.text = "capture page"

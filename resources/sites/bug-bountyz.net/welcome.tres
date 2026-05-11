@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_y4m0v")
-content = "[center][rainbow][font_size=28]★ b u g - b o u n t y z ★[/font_size][/rainbow][/center]
+content = "[center][rainbow][font_size=28]* b u g - b o u n t y z *[/font_size][/rainbow][/center]
 
 [center][i]new here? follow this guide to learn the ropes.[/i][/center]
 
@@ -26,10 +26,10 @@ a vulnerability is hiding on [b]this very page[/b]. here's how to report it:
 [b]4.[/b] hit the [H] button on the browser to return to the home page. on the bounty click [color=red]>>> report finding <<<[/color]. you can navigate back to this page after opening the form.
 
 [b]5.[/b] fill in the form. the details are:
-   • endpoint: the page you captured
-   • class: [b]Authentication Bypass[/b]
-   • specifics: [b]Missing Authentication Check[/b]
-   • proof: the page capture
+   -endpoint: the page you captured
+   -class: [b]Authentication Bypass[/b]
+   -specifics: [b]Missing Authentication Check[/b]
+   -proof: the page capture
 
 [b]6.[/b] submit and get paid
 
