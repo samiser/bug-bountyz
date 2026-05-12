@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://df0k7r3pq2mxw" path="res://scenes/tools/directory_fuzzer.tscn" id="2_hre1t"]
 [ext_resource type="PackedScene" uid="uid://cnbkxh3pq8m4w" path="res://scenes/tools/captures_notebook.tscn" id="3_hre1t"]
 [ext_resource type="Script" uid="uid://bisd24rfknjep" path="res://scripts/desktop/tabbed_window.gd" id="4_tw"]
+[ext_resource type="Script" path="res://scripts/tools/toolbox.gd" id="5_tb"]
 
 [node name="Toolbox" type="Control" unique_id=474395757]
 layout_mode = 3
@@ -12,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("5_tb")
 
 [node name="TabContainer" type="TabContainer" parent="." unique_id=438107669]
 layout_mode = 1

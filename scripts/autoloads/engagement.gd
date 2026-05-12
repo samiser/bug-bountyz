@@ -7,12 +7,14 @@ const LEVEL_THRESHOLDS : Array[int] = [10, 500]
 
 var captures : Array[Dictionary] = []
 var money : int = 0
+var lifetime_earned : int = 0
 var level : int = 0
 var detection_by_bounty : Dictionary = {}
 var burned_bounties : Array[String] = []
 var discovered_pages : Array[String] = []
 var discovered_sites : Array[String] = []
 var claimed_findings : Array[String] = []
+var unlocked_tools : Array[String] = []
 var active_bounty : Bounty = null
 
 signal detection_changed(bounty_id: String, new_value: int)
@@ -24,6 +26,44 @@ signal action_invoked(name: String, args: Array)
 signal bounty_burned(bounty_id: String)
 signal active_bounty_changed(bounty: Bounty)
 signal level_changed(new_value: int)
+signal tool_unlocked(id: String)
+
+func _ready() -> void:
+	action_invoked.connect(_on_action)
+
+func _on_action(name: String, args: Array) -> void:
+	if name != "buy" or args.is_empty():
+		return
+	_try_buy(args[0])
+
+func _try_buy(tool_id: String) -> void:
+	if not Tools.ALL.has(tool_id):
+		Sound.play_error()
+		return
+	if is_tool_unlocked(tool_id):
+		Sound.play_error()
+		return
+	var price : int = Tools.ALL[tool_id].price
+	if money < price:
+		Sound.play_error()
+		return
+	spend_money(price)
+	unlock_tool(tool_id)
+	Sound.play_click()
+
+func unlock_tool(id: String) -> bool:
+	if unlocked_tools.has(id):
+		return false
+	unlocked_tools.append(id)
+	tool_unlocked.emit(id)
+	return true
+
+func is_tool_unlocked(id: String) -> bool:
+	return unlocked_tools.has(id)
+
+func spend_money(amount: int) -> void:
+	money -= amount
+	money_changed.emit(money)
 
 func add_detection(bounty_id: String, amount: int) -> void:
 	if bounty_id.is_empty() or burned_bounties.has(bounty_id):
@@ -93,13 +133,14 @@ func discover_site(domain: String) -> void:
 
 func add_money(amount: int) -> void:
 	money += amount
+	lifetime_earned += amount
 	money_changed.emit(money)
 	_recompute_level()
 
 func _recompute_level() -> void:
 	var new_level := 0
 	for threshold in LEVEL_THRESHOLDS:
-		if money >= threshold:
+		if lifetime_earned >= threshold:
 			new_level += 1
 		else:
 			break

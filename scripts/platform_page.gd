@@ -11,6 +11,7 @@ const PAGE_TEMPLATE := """
 
 [center][color=yellow]level: %d[/color][/center]
 [center][color=lime]bounties paid: $%d[/color][/center]
+[center][url=/shop.html][color=yellow]>>> shop <<<[/color][/url][/center]
 
 [color=hotpink][font_size=18]>> available programs[/font_size][/color]
 

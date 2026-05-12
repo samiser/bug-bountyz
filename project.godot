@@ -24,6 +24,7 @@ Cves="*res://scripts/autoloads/cves.gd"
 Bounties="*res://scripts/autoloads/bounties.gd"
 Vulns="*res://scripts/autoloads/vulns.gd"
 Sites="*res://scripts/autoloads/sites.gd"
+Tools="*res://scripts/autoloads/tools.gd"
 
 [display]
 

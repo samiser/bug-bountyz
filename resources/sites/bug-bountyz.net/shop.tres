@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ShopPage" format=3 uid="uid://bshop2x4yqqan"]
+
+[ext_resource type="AudioStream" uid="uid://bd3i3qdwnt7mk" path="res://audio/music/urban_shop_bpm92.ogg" id="1_ddf25"]
+[ext_resource type="Script" uid="uid://7gbttwuanqio" path="res://scripts/shop_page.gd" id="1_sp"]
+
+[resource]
+script = ExtResource("1_sp")
+background_colour = Color(0, 0, 0, 1)
+music = ExtResource("1_ddf25")
