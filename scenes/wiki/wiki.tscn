@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://bcmkl8htg5xgb"]
 
-[ext_resource type="Script" uid="uid://cbcagnmh4q4ky" path="res://scripts/wiki/wiki.gd" id="1_wiki"]
 [ext_resource type="PackedScene" uid="uid://cdcryaka2yq80" path="res://scenes/wiki/cve_directory.tscn" id="2_7jlhl"]
+[ext_resource type="PackedScene" uid="uid://bkq76w5hrblg2" path="res://scenes/wiki/vulns.tscn" id="2_q8xxu"]
+[ext_resource type="Script" uid="uid://cbcagnmh4q4ky" path="res://scripts/wiki/wiki_page.gd" id="2_rerwy"]
 [ext_resource type="Script" uid="uid://bisd24rfknjep" path="res://scripts/desktop/tabbed_window.gd" id="3_tw"]
 
-[node name="TabContainer" type="TabContainer" unique_id=1655856954]
+[node name="Wiki" type="TabContainer" unique_id=1655856954]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -14,23 +15,29 @@ current_tab = 0
 script = ExtResource("3_tw")
 action_name = "open_wiki"
 
-[node name="Vulns" type="HSplitContainer" parent="." unique_id=215880525 node_paths=PackedStringArray("list", "detail")]
+[node name="Tools" type="HSplitContainer" parent="." unique_id=79410092 node_paths=PackedStringArray("list", "detail")]
 layout_mode = 2
-split_offsets = PackedInt32Array(108)
-split_offset = 108
-script = ExtResource("1_wiki")
+split_offsets = PackedInt32Array(138)
+split_offset = 138
+script = ExtResource("2_rerwy")
 list = NodePath("ItemList")
 detail = NodePath("RichTextLabel")
+source = "tools"
 metadata/_tab_index = 0
 
-[node name="ItemList" type="ItemList" parent="Vulns" unique_id=315936869]
+[node name="ItemList" type="ItemList" parent="Tools" unique_id=720452166]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Vulns" unique_id=419720830]
+[node name="RichTextLabel" type="RichTextLabel" parent="Tools" unique_id=1196758239]
 layout_mode = 2
 bbcode_enabled = true
 
-[node name="CVEs" parent="." unique_id=2300001 instance=ExtResource("2_7jlhl")]
+[node name="Vulns" parent="." unique_id=24640450 instance=ExtResource("2_q8xxu")]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 1
+
+[node name="CVE Directory" parent="." unique_id=2300001 instance=ExtResource("2_7jlhl")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2

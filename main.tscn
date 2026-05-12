@@ -36,7 +36,7 @@ script = ExtResource("1_eb6dy")
 oversampling_override = 1.0
 title = "Wiki"
 initial_position = 1
-size = Vector2i(386, 353)
+size = Vector2i(584, 356)
 visible = false
 script = ExtResource("1_eb6dy")
 

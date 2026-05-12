@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bkq76w5hrblg2"]
+
+[ext_resource type="Script" uid="uid://cbcagnmh4q4ky" path="res://scripts/wiki/wiki_page.gd" id="1_lacpo"]
+
+[node name="Vulns" type="HSplitContainer" unique_id=24640450 node_paths=PackedStringArray("list", "detail")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+split_offsets = PackedInt32Array(197)
+split_offset = 197
+script = ExtResource("1_lacpo")
+list = NodePath("ItemList")
+detail = NodePath("RichTextLabel")
+metadata/_tab_index = 0
+
+[node name="ItemList" type="ItemList" parent="." unique_id=1783718692]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1152079340]
+layout_mode = 2
+bbcode_enabled = true
