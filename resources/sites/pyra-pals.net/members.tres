@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Page" format=3 uid="uid://bdsx8evytfjwq"]
+
+[ext_resource type="Script" uid="uid://ckg4qnkq81pmh" path="res://scripts/resources/page.gd" id="1_rhb2e"]
+
+[resource]
+script = ExtResource("1_rhb2e")
+content = "members only!!"
+metadata/_custom_type_script = "uid://ckg4qnkq81pmh"

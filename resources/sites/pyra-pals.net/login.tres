@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="Page" format=3 uid="uid://bm2pppfnf1f7c"]
 
 [ext_resource type="AudioStream" uid="uid://dnvs762agoyiy" path="res://audio/music/music_pyra.mp3" id="1_dmxqr"]
+[ext_resource type="PackedScene" uid="uid://c5xw6mbwkfgec" path="res://scenes/pages/login_form.tscn" id="2_5plh2"]
 [ext_resource type="Script" uid="uid://ckg4qnkq81pmh" path="res://scripts/resources/page.gd" id="2_cq5ex"]
 
 [resource]
@@ -12,4 +13,5 @@ content = "[center][img]res://images/img_pyrapals_logo.jpg[/img]
 [/center]
 "
 music = ExtResource("1_dmxqr")
+scene = ExtResource("2_5plh2")
 metadata/_custom_type_script = "uid://ckg4qnkq81pmh"

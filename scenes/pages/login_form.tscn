@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://c5xw6mbwkfgec"]
+
+[ext_resource type="Script" uid="uid://dfiak2mo5b6eg" path="res://scripts/pages/login_form.gd" id="1_lf"]
+
+[node name="LoginForm" type="Control" unique_id=1638082389]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lf")
+valid_username = "admin"
+valid_password = "password"
+success_url = "pyra-pals.net/members.html"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=457673292]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -90.0
+offset_right = 140.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="HeaderLabel" type="RichTextLabel" parent="VBoxContainer" unique_id=1697976451]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][b]LOGIN[/b][/center]"
+fit_content = true
+
+[node name="UsernameRow" type="HBoxContainer" parent="VBoxContainer" unique_id=726268768]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/UsernameRow" unique_id=1306551186]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "username:"
+
+[node name="UsernameInput" type="LineEdit" parent="VBoxContainer/UsernameRow" unique_id=1882910896]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PasswordRow" type="HBoxContainer" parent="VBoxContainer" unique_id=2124934128]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/PasswordRow" unique_id=738192035]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "password:"
+
+[node name="PasswordInput" type="LineEdit" parent="VBoxContainer/PasswordRow" unique_id=321692046]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SubmitButton" type="Button" parent="VBoxContainer" unique_id=1605181328]
+layout_mode = 2
+text = "log in"
+
+[node name="StatusLabel" type="RichTextLabel" parent="VBoxContainer" unique_id=1729288249]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true

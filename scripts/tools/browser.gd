@@ -8,6 +8,7 @@ var current_page : Page
 @onready var content_label: RichTextLabel = $VBoxContainer/page_panel/content_label
 @onready var background_image: TextureRect = $VBoxContainer/page_panel/background_image
 @onready var background_colour: ColorRect = $VBoxContainer/page_panel/background_colour
+@onready var page_scene_container: Control = $VBoxContainer/page_panel/page_scene_container
 
 @onready var prev_button: Button = $VBoxContainer/control_panel/HBoxContainer/PrevButton
 @onready var next_button: Button = $VBoxContainer/control_panel/HBoxContainer/NextButton
@@ -86,7 +87,7 @@ func _load_page(page : Page, add_history : bool = true, play_sound : bool = true
 	Engagement.discover_site(Url.site_of(url))
 
 	var site := Sites.get_by_domain(Url.site_of(url))
-	content_label.theme = site.theme if site != null else null
+	page_panel.theme = site.theme if site != null else null
 
 	Engagement.set_active_bounty(Bounties.find_by_page(page))
 
@@ -96,8 +97,18 @@ func _load_page(page : Page, add_history : bool = true, play_sound : bool = true
 		history.append(url)
 		current_history_index = history.size() - 1
 
-	content_label.text = ""
-	content_label.append_text(page.get_content())
+	for child in page_scene_container.get_children():
+		child.queue_free()
+	if page.scene != null:
+		var instance := page.scene.instantiate()
+		page_scene_container.add_child(instance)
+		page_scene_container.visible = true
+		content_label.visible = false
+	else:
+		page_scene_container.visible = false
+		content_label.visible = true
+		content_label.text = ""
+		content_label.append_text(page.get_content())
 
 	if page.music:
 		if page_music.stream != page.music:

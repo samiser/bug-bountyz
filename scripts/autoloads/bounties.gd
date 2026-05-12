@@ -6,6 +6,7 @@ const ALL : Array[Bounty] = [
 	preload("res://resources/bounties/bug_bountyz_onboarding.tres"),
 	preload("res://resources/bounties/nans_bounty.tres"),
 	preload("res://resources/bounties/y2k_bounty.tres"),
+	preload("res://resources/bounties/pyrapals_bounty.tres"),
 ]
 
 var _by_id : Dictionary = {}

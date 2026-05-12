@@ -2,11 +2,22 @@
 
 [ext_resource type="Script" uid="uid://ckg4qnkq81pmh" path="res://scripts/resources/page.gd" id="1_08n4t"]
 [ext_resource type="Resource" uid="uid://dxi7pqqwsw4xj" path="res://resources/sites/pyra-pals.net/index.tres" id="2_ulq4a"]
+[ext_resource type="Resource" uid="uid://bm2pppfnf1f7c" path="res://resources/sites/pyra-pals.net/login.tres" id="3_txewf"]
 [ext_resource type="Script" uid="uid://cxbe6dwl3fs0w" path="res://scripts/resources/site.gd" id="3_xksew"]
+[ext_resource type="FontFile" uid="uid://wnesss37bwja" path="res://fonts/font_comic.TTF" id="4_ulq4a"]
+[ext_resource type="Resource" uid="uid://dhjx1pg3emkce" path="res://resources/sites/pyra-pals.net/mail.tres" id="4_yaqoe"]
+[ext_resource type="Resource" uid="uid://euxv8nno4cc" path="res://resources/sites/pyra-pals.net/shop.tres" id="5_671x8"]
+[ext_resource type="Resource" uid="uid://bdsx8evytfjwq" path="res://resources/sites/pyra-pals.net/members.tres" id="6_yaqoe"]
+
+[sub_resource type="Theme" id="Theme_08n4t"]
+default_font = ExtResource("4_ulq4a")
+Label/colors/font_color = Color(0, 0, 0, 1)
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
 
 [resource]
 script = ExtResource("3_xksew")
 domain = "pyra-pals.net"
 fingerprints = Array[String](["22/tcp ssh OpenSSH 3.5", "80/tcp http IIS 4.0", "27015/udp y2k-crawler-server qa-build-0.4"])
-pages = Array[ExtResource("1_08n4t")]([ExtResource("2_ulq4a")])
+pages = Array[ExtResource("1_08n4t")]([ExtResource("2_ulq4a"), ExtResource("3_txewf"), ExtResource("4_yaqoe"), ExtResource("5_671x8"), ExtResource("6_yaqoe")])
+theme = SubResource("Theme_08n4t")
 metadata/_custom_type_script = "uid://cxbe6dwl3fs0w"

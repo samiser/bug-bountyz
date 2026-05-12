@@ -4,6 +4,7 @@ const ALL : Array[Site] = [
 	preload("res://resources/sites/bug-bountyz.net/site.tres"),
 	preload("res://resources/sites/nansrecipes.com/site.tres"),
 	preload("res://resources/sites/y2k-crawler.com/site.tres"),
+	preload("res://resources/sites/pyra-pals.net/site.tres"),
 ]
 
 var _by_domain : Dictionary = {}
