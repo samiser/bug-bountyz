@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Site" format=3 uid="uid://cy2ksite8nq3v"]
 
-[ext_resource type="Script" uid="uid://ckg4qnkq81pmh" path="res://scripts/page.gd" id="1_8adtf"]
-[ext_resource type="Script" uid="uid://cxbe6dwl3fs0w" path="res://scripts/site.gd" id="1_y2ks"]
+[ext_resource type="Script" uid="uid://ckg4qnkq81pmh" path="res://scripts/resources/page.gd" id="1_8adtf"]
+[ext_resource type="Script" uid="uid://cxbe6dwl3fs0w" path="res://scripts/resources/site.gd" id="1_y2ks"]
 [ext_resource type="Resource" uid="uid://xlglopd7cc1h" path="res://resources/sites/y2k-crawler.com/index.tres" id="2_tsbw3"]
 [ext_resource type="Resource" uid="uid://by2klead4mqxn" path="res://resources/sites/y2k-crawler.com/leaderboard.tres" id="3_ungik"]
 

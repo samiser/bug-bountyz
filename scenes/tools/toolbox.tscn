@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dtn5qqrb7fhya"]
 
-[ext_resource type="PackedScene" uid="uid://k1b3xm4saaks" path="res://port_scanner.tscn" id="1_hf060"]
-[ext_resource type="PackedScene" uid="uid://df0k7r3pq2mxw" path="res://directory_fuzzer.tscn" id="2_hre1t"]
-[ext_resource type="PackedScene" uid="uid://cnbkxh3pq8m4w" path="res://captures_notebook.tscn" id="3_hre1t"]
-[ext_resource type="Script" path="res://scripts/tabbed_window.gd" id="4_tw"]
+[ext_resource type="PackedScene" uid="uid://k1b3xm4saaks" path="res://scenes/tools/port_scanner.tscn" id="1_hf060"]
+[ext_resource type="PackedScene" uid="uid://df0k7r3pq2mxw" path="res://scenes/tools/directory_fuzzer.tscn" id="2_hre1t"]
+[ext_resource type="PackedScene" uid="uid://cnbkxh3pq8m4w" path="res://scenes/tools/captures_notebook.tscn" id="3_hre1t"]
+[ext_resource type="Script" uid="uid://bisd24rfknjep" path="res://scripts/desktop/tabbed_window.gd" id="4_tw"]
 
 [node name="Toolbox" type="Control" unique_id=474395757]
 layout_mode = 3

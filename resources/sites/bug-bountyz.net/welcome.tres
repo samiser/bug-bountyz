@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Page" format=3 uid="uid://d23q7drbir5fy"]
 
 [ext_resource type="AudioStream" uid="uid://d00g6b47vx1r8" path="res://audio/music/detective_music.wav" id="1_52xah"]
-[ext_resource type="Script" uid="uid://ckg4qnkq81pmh" path="res://scripts/page.gd" id="1_y4m0v"]
+[ext_resource type="Script" uid="uid://ckg4qnkq81pmh" path="res://scripts/resources/page.gd" id="1_y4m0v"]
 
 [resource]
 script = ExtResource("1_y4m0v")

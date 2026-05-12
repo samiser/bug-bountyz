@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Page" format=3 uid="uid://xlglopd7cc1h"]
 
 [ext_resource type="Texture2D" uid="uid://bgjbq3afakib1" path="res://images/img_y2k_icon.bmp" id="1_2avd3"]
-[ext_resource type="Script" uid="uid://ckg4qnkq81pmh" path="res://scripts/page.gd" id="1_skyko"]
+[ext_resource type="Script" uid="uid://ckg4qnkq81pmh" path="res://scripts/resources/page.gd" id="1_skyko"]
 [ext_resource type="AudioStream" uid="uid://b47h551qo4idp" path="res://audio/music/music_y2k.mp3" id="2_0d6ji"]
 
 [resource]

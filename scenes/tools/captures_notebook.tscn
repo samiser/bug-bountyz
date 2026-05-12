@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cnbkxh3pq8m4w"]
 
-[ext_resource type="Script" uid="uid://blu1e58vqmqub" path="res://scripts/captures_notebook.gd" id="1_cn"]
+[ext_resource type="Script" uid="uid://blu1e58vqmqub" path="res://scripts/tools/captures_notebook.gd" id="1_cn"]
 
 [node name="CapturesNotebook" type="HSplitContainer" unique_id=2200001 node_paths=PackedStringArray("list", "detail")]
 anchors_preset = 15

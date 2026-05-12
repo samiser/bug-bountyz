@@ -1,7 +1,8 @@
 [gd_resource type="Resource" script_class="Bounty" format=3 uid="uid://maoy6qisc4yb"]
 
-[ext_resource type="Script" uid="uid://ox62ws8mcbvk" path="res://scripts/finding.gd" id="1_axno1"]
-[ext_resource type="Script" uid="uid://c72mw4r1vwo1x" path="res://scripts/bounty.gd" id="1_bnty"]
+[ext_resource type="Script" uid="uid://ox62ws8mcbvk" path="res://scripts/resources/finding.gd" id="1_axno1"]
+[ext_resource type="Script" uid="uid://c72mw4r1vwo1x" path="res://scripts/resources/bounty.gd" id="1_bnty"]
+[ext_resource type="Script" uid="uid://ckg4qnkq81pmh" path="res://scripts/resources/page.gd" id="1_r3ean"]
 [ext_resource type="Resource" uid="uid://by2kqaf7m2pxd" path="res://resources/findings/y2k-crawler.com/qa_server_exposed.tres" id="2_6ypp3"]
 [ext_resource type="Resource" uid="uid://xlglopd7cc1h" path="res://resources/sites/y2k-crawler.com/index.tres" id="2_bvv8l"]
 [ext_resource type="Resource" uid="uid://by2kverr3pq2x" path="res://resources/findings/y2k-crawler.com/verbose_error.tres" id="3_r3ean"]
@@ -13,5 +14,6 @@ program_name = "Y2K Crawler"
 target_page = ExtResource("2_bvv8l")
 payout_min = 100
 payout_max = 500
+required_level = 1
 scope = "game fucked up"
 findings = Array[ExtResource("1_axno1")]([ExtResource("2_6ypp3"), ExtResource("3_r3ean")])

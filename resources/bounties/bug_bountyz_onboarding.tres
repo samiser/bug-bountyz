@@ -1,14 +1,14 @@
 [gd_resource type="Resource" script_class="Bounty" format=3 uid="uid://n3oev0uffgl4"]
 
-[ext_resource type="Script" uid="uid://ckg4qnkq81pmh" path="res://scripts/page.gd" id="1_pexs0"]
-[ext_resource type="Script" uid="uid://ox62ws8mcbvk" path="res://scripts/finding.gd" id="1_wxw6d"]
+[ext_resource type="Script" uid="uid://ckg4qnkq81pmh" path="res://scripts/resources/page.gd" id="1_pexs0"]
+[ext_resource type="Script" uid="uid://ox62ws8mcbvk" path="res://scripts/resources/finding.gd" id="1_wxw6d"]
 [ext_resource type="Resource" uid="uid://ctutvs2pq8nxr" path="res://resources/findings/bug-bountyz.net/tutorial_view_source.tres" id="2_61hqf"]
-[ext_resource type="Script" uid="uid://c72mw4r1vwo1x" path="res://scripts/bounty.gd" id="2_sdbwu"]
 [ext_resource type="Resource" uid="uid://bxtnab2c7mh3c" path="res://resources/sites/bug-bountyz.net/backstage.tres" id="3_etn6a"]
 [ext_resource type="Resource" uid="uid://d23q7drbir5fy" path="res://resources/sites/bug-bountyz.net/welcome.tres" id="3_sdbwu"]
+[ext_resource type="Script" uid="uid://c72mw4r1vwo1x" path="res://scripts/resources/bounty.gd" id="6_pexs0"]
 
 [resource]
-script = ExtResource("2_sdbwu")
+script = ExtResource("6_pexs0")
 id = "bountyz-001"
 program_name = "Welcome to bug-bountyz.net!"
 target_page = ExtResource("3_sdbwu")

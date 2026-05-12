@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Site" format=3 uid="uid://brf4qc1isqwao"]
 
-[ext_resource type="Script" uid="uid://ckg4qnkq81pmh" path="res://scripts/page.gd" id="1_oicgi"]
-[ext_resource type="Script" uid="uid://cxbe6dwl3fs0w" path="res://scripts/site.gd" id="2_nxq2y"]
+[ext_resource type="Script" uid="uid://ckg4qnkq81pmh" path="res://scripts/resources/page.gd" id="1_oicgi"]
+[ext_resource type="Script" uid="uid://cxbe6dwl3fs0w" path="res://scripts/resources/site.gd" id="2_nxq2y"]
 [ext_resource type="Resource" uid="uid://ckfkf46o1mdke" path="res://resources/sites/bug-bountyz.net/index.tres" id="2_sdyr6"]
 [ext_resource type="Resource" uid="uid://d23q7drbir5fy" path="res://resources/sites/bug-bountyz.net/welcome.tres" id="3_ucmb3"]
 [ext_resource type="Resource" uid="uid://bxtnab2c7mh3c" path="res://resources/sites/bug-bountyz.net/backstage.tres" id="4_ucmb3"]

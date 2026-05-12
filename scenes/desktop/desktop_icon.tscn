@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cwvchqfkvtok1"]
 
-[ext_resource type="Script" uid="uid://b6upt2fkfxwl6" path="res://scripts/desktop_icon.gd" id="1_d5pvv"]
+[ext_resource type="Script" uid="uid://b6upt2fkfxwl6" path="res://scripts/desktop/desktop_icon.gd" id="1_d5pvv"]
 [ext_resource type="Texture2D" uid="uid://bgjbq3afakib1" path="res://images/img_y2k_icon.bmp" id="2_hbmc8"]
 
 [node name="DesktopIcon" type="Control" unique_id=282453733]

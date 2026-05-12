@@ -3,8 +3,11 @@ extends Node
 const DECAY_PER_ACTION : int = 2
 const BURN_THRESHOLD : int = 100
 
+const LEVEL_THRESHOLDS : Array[int] = [10, 500]
+
 var captures : Array[Dictionary] = []
 var money : int = 0
+var level : int = 0
 var detection_by_bounty : Dictionary = {}
 var burned_bounties : Array[String] = []
 var discovered_pages : Array[String] = []
@@ -20,6 +23,7 @@ signal site_discovered(domain: String)
 signal action_invoked(name: String, args: Array)
 signal bounty_burned(bounty_id: String)
 signal active_bounty_changed(bounty: Bounty)
+signal level_changed(new_value: int)
 
 func add_detection(bounty_id: String, amount: int) -> void:
 	if bounty_id.is_empty() or burned_bounties.has(bounty_id):
@@ -90,6 +94,18 @@ func discover_site(domain: String) -> void:
 func add_money(amount: int) -> void:
 	money += amount
 	money_changed.emit(money)
+	_recompute_level()
+
+func _recompute_level() -> void:
+	var new_level := 0
+	for threshold in LEVEL_THRESHOLDS:
+		if money >= threshold:
+			new_level += 1
+		else:
+			break
+	if new_level != level:
+		level = new_level
+		level_changed.emit(level)
 
 func claim_finding(key: String) -> bool:
 	if claimed_findings.has(key):

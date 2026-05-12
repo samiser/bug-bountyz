@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://k1b3xm4saaks"]
 
-[ext_resource type="Script" uid="uid://bk7y70wc6y1g6" path="res://scripts/port_scanner.gd" id="1_4og87"]
+[ext_resource type="Script" uid="uid://bk7y70wc6y1g6" path="res://scripts/tools/port_scanner.gd" id="1_4og87"]
 
 [node name="PortScanner" type="VBoxContainer" unique_id=1864047590 node_paths=PackedStringArray("target_dropdown", "scan_button", "output_label", "capture_button", "detection_label")]
 anchors_preset = 15

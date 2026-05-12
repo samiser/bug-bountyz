@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://bl14o0urrnk7i"]
+
+[ext_resource type="Script" uid="uid://bg3pbk5hiduqo" path="res://scripts/desktop/taskbar.gd" id="1_0sar1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_efxa6"]
+bg_color = Color(0, 0, 0, 0.7764706)
+
+[node name="Taskbar" type="Control" unique_id=342152614]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_0sar1")
+
+[node name="Panel" type="Panel" parent="." unique_id=1339087046]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_efxa6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1750272670]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 2
+
+[node name="Browser" type="Button" parent="HBoxContainer" unique_id=173695612]
+layout_mode = 2
+text = "Browser"
+
+[node name="Toolbox" type="Button" parent="HBoxContainer" unique_id=222286302]
+layout_mode = 2
+text = "Toolbox"
+
+[node name="Wiki" type="Button" parent="HBoxContainer" unique_id=1430757325]
+layout_mode = 2
+text = "Wiki"
+
+[node name="Control" type="Control" parent="HBoxContainer" unique_id=2068856074]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer" unique_id=1602154805]
+layout_mode = 2
+
+[node name="MoneyLabel" type="Label" parent="HBoxContainer" unique_id=1753085168]
+layout_mode = 2
+text = "money: $0 "
+
+[node name="VSeparator2" type="VSeparator" parent="HBoxContainer" unique_id=491764328]
+layout_mode = 2
+
+[node name="EngagementLabel" type="Label" parent="HBoxContainer" unique_id=333084411]
+layout_mode = 2
+text = "current engagement: none"
+
+[node name="VSeparator3" type="VSeparator" parent="HBoxContainer" unique_id=599396790]
+layout_mode = 2
+
+[node name="DetectionLabel" type="Label" parent="HBoxContainer" unique_id=2103448747]
+layout_mode = 2
+text = "detection: 0%"

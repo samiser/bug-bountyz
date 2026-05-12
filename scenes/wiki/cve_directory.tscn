@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cdcryaka2yq80"]
 
-[ext_resource type="Script" uid="uid://um3qbdjd67ox" path="res://scripts/cve_directory.gd" id="1_cd"]
+[ext_resource type="Script" uid="uid://um3qbdjd67ox" path="res://scripts/wiki/cve_directory.gd" id="1_cd"]
 
 [node name="CveDirectory" type="HSplitContainer" unique_id=2300001 node_paths=PackedStringArray("list", "detail")]
 anchors_preset = 15

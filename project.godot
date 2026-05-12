@@ -18,12 +18,12 @@ config/icon="res://icon.svg"
 [autoload]
 
 Engagement="*uid://cwxr1n1pw1shg"
-Sound="*res://scripts/sound.gd"
-Url="*res://scripts/url.gd"
-Cves="*res://scripts/cves.gd"
-Bounties="*res://scripts/bounties.gd"
-Vulns="*res://scripts/vulns.gd"
-Sites="*res://scripts/sites.gd"
+Sound="*res://scripts/autoloads/sound.gd"
+Url="*res://scripts/autoloads/url.gd"
+Cves="*res://scripts/autoloads/cves.gd"
+Bounties="*res://scripts/autoloads/bounties.gd"
+Vulns="*res://scripts/autoloads/vulns.gd"
+Sites="*res://scripts/autoloads/sites.gd"
 
 [display]
 

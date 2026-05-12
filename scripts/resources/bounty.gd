@@ -7,6 +7,7 @@ extends Resource
 @export var payout_min : int
 @export var payout_max : int
 @export_range(1, 5) var difficulty : int = 1
+@export var required_level : int
 @export_multiline var scope : String
 @export var findings : Array[Finding]
 @export var engagement_pages : Array[Page]

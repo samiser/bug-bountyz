@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bsf3xmqkpw7n2"]
 
-[ext_resource type="Script" uid="uid://bxcy146w1rjgh" path="res://scripts/submission_form.gd" id="1_sf"]
+[ext_resource type="Script" uid="uid://bxcy146w1rjgh" path="res://scripts/tools/submission_form.gd" id="1_sf"]
 
 [node name="SubmissionForm" type="VBoxContainer" unique_id=2400001 node_paths=PackedStringArray("bounty_dropdown", "endpoint_dropdown", "class_dropdown", "specifics_dropdown", "poc_list", "submit_button", "form_view", "outcome_view", "outcome_label", "close_button")]
 anchors_preset = 15

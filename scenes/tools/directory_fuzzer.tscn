@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://df0k7r3pq2mxw"]
 
-[ext_resource type="Script" path="res://scripts/directory_fuzzer.gd" id="1_df"]
+[ext_resource type="Script" uid="uid://nbso45bflnha" path="res://scripts/tools/directory_fuzzer.gd" id="1_df"]
 
 [node name="DirectoryFuzzer" type="VBoxContainer" unique_id=2500001 node_paths=PackedStringArray("target_dropdown", "fuzz_button", "output_label", "capture_button")]
 anchors_preset = 15

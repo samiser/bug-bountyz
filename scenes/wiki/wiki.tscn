@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bcmkl8htg5xgb"]
 
-[ext_resource type="Script" uid="uid://cbcagnmh4q4ky" path="res://scripts/wiki.gd" id="1_wiki"]
-[ext_resource type="PackedScene" uid="uid://cdcryaka2yq80" path="res://cve_directory.tscn" id="2_7jlhl"]
-[ext_resource type="Script" path="res://scripts/tabbed_window.gd" id="3_tw"]
+[ext_resource type="Script" uid="uid://cbcagnmh4q4ky" path="res://scripts/wiki/wiki.gd" id="1_wiki"]
+[ext_resource type="PackedScene" uid="uid://cdcryaka2yq80" path="res://scenes/wiki/cve_directory.tscn" id="2_7jlhl"]
+[ext_resource type="Script" uid="uid://bisd24rfknjep" path="res://scripts/desktop/tabbed_window.gd" id="3_tw"]
 
 [node name="TabContainer" type="TabContainer" unique_id=1655856954]
 anchors_preset = 15
