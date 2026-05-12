@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Site" format=3 uid="uid://6wnccny12i8y"]
+
+[ext_resource type="Script" uid="uid://ckg4qnkq81pmh" path="res://scripts/resources/page.gd" id="1_08n4t"]
+[ext_resource type="Resource" uid="uid://dxi7pqqwsw4xj" path="res://resources/sites/pyra-pals.net/index.tres" id="2_ulq4a"]
+[ext_resource type="Script" uid="uid://cxbe6dwl3fs0w" path="res://scripts/resources/site.gd" id="3_xksew"]
+
+[resource]
+script = ExtResource("3_xksew")
+domain = "pyra-pals.net"
+fingerprints = Array[String](["22/tcp ssh OpenSSH 3.5", "80/tcp http IIS 4.0", "27015/udp y2k-crawler-server qa-build-0.4"])
+pages = Array[ExtResource("1_08n4t")]([ExtResource("2_ulq4a")])
+metadata/_custom_type_script = "uid://cxbe6dwl3fs0w"

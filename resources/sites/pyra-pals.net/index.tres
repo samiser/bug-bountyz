@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Page" format=3 uid="uid://dxi7pqqwsw4xj"]
+
+[ext_resource type="AudioStream" uid="uid://dnvs762agoyiy" path="res://audio/music/music_pyra.mp3" id="1_1ck0s"]
+[ext_resource type="Script" uid="uid://ckg4qnkq81pmh" path="res://scripts/resources/page.gd" id="1_txedb"]
+
+[resource]
+script = ExtResource("1_txedb")
+content = "[center][img]res://images/img_pyrapals_logo.jpg[/img]
+[color=BLACK][b]857[/b] players online![/color]
+
+[color=BLUE][url=/login]Login[/url] [url=/mail]Pyramail[/url] [url=/shop]Shop[/url][/color]
+[/center]
+"
+music = ExtResource("1_1ck0s")
+metadata/_custom_type_script = "uid://ckg4qnkq81pmh"

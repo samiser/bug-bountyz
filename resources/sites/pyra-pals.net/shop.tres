@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Page" format=3 uid="uid://euxv8nno4cc"]
+
+[ext_resource type="AudioStream" uid="uid://dnvs762agoyiy" path="res://audio/music/music_pyra.mp3" id="1_m7m3m"]
+[ext_resource type="Script" uid="uid://ckg4qnkq81pmh" path="res://scripts/resources/page.gd" id="2_u7vcv"]
+
+[resource]
+script = ExtResource("2_u7vcv")
+content = "[center][img]res://images/img_pyrapals_logo.jpg[/img]
+[color=BLACK]shop page[/color]
+
+[color=BLUE][url=/]Home[/url][/color]
+[/center]
+"
+music = ExtResource("1_m7m3m")
+metadata/_custom_type_script = "uid://ckg4qnkq81pmh"
