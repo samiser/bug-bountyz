@@ -9,3 +9,4 @@ extends Resource
 @export_range(1, 5) var difficulty : int = 1
 @export_multiline var scope : String
 @export var findings : Array[Finding]
+@export var engagement_pages : Array[Page]

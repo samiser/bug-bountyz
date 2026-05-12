@@ -88,6 +88,8 @@ func _load_page(page : Page, add_history : bool = true, play_sound : bool = true
 	var site := Sites.get_by_domain(Url.site_of(url))
 	content_label.theme = site.theme if site != null else null
 
+	Engagement.set_active_bounty(Bounties.find_by_page(page))
+
 	if add_history and page != current_page:
 		if history.size() - 1 > current_history_index:
 			history.resize(current_history_index + 1)

@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cs48nvrs0n88s" path="res://images/browser.png" id="9_efxa6"]
 [ext_resource type="Texture2D" uid="uid://dvrucw8h5j672" path="res://images/toolbox.png" id="10_efxa6"]
 [ext_resource type="Texture2D" uid="uid://qbtcvuo54sff" path="res://images/wiki.png" id="11_efxa6"]
+[ext_resource type="Script" uid="uid://bg3pbk5hiduqo" path="res://scripts/taskbar.gd" id="12_dg77c"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_efxa6"]
 bg_color = Color(0, 0, 0, 0.7764706)
@@ -101,7 +102,7 @@ layout_mode = 2
 window = NodePath("../../Wiki")
 icon = ExtResource("11_efxa6")
 
-[node name="Control" type="Control" parent="." unique_id=179889315]
+[node name="Taskbar" type="Control" parent="." unique_id=179889315]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 1
 anchors_preset = 12
@@ -110,8 +111,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
+script = ExtResource("12_dg77c")
 
-[node name="Panel" type="Panel" parent="Control" unique_id=972244110]
+[node name="Panel" type="Panel" parent="Taskbar" unique_id=972244110]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -120,7 +122,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_efxa6")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control" unique_id=1659931048]
+[node name="HBoxContainer" type="HBoxContainer" parent="Taskbar" unique_id=1659931048]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -129,39 +131,39 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 2
 
-[node name="Browser" type="Button" parent="Control/HBoxContainer" unique_id=2050967713]
+[node name="Browser" type="Button" parent="Taskbar/HBoxContainer" unique_id=2050967713]
 layout_mode = 2
 text = "Browser"
 
-[node name="Toolbox" type="Button" parent="Control/HBoxContainer" unique_id=1038636628]
+[node name="Toolbox" type="Button" parent="Taskbar/HBoxContainer" unique_id=1038636628]
 layout_mode = 2
 text = "Toolbox"
 
-[node name="Wiki" type="Button" parent="Control/HBoxContainer" unique_id=1413284699]
+[node name="Wiki" type="Button" parent="Taskbar/HBoxContainer" unique_id=1413284699]
 layout_mode = 2
 text = "Wiki"
 
-[node name="Control" type="Control" parent="Control/HBoxContainer" unique_id=666378915]
+[node name="Control" type="Control" parent="Taskbar/HBoxContainer" unique_id=666378915]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VSeparator" type="VSeparator" parent="Control/HBoxContainer" unique_id=1547667172]
+[node name="VSeparator" type="VSeparator" parent="Taskbar/HBoxContainer" unique_id=1547667172]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Control/HBoxContainer" unique_id=1081704396]
+[node name="MoneyLabel" type="Label" parent="Taskbar/HBoxContainer" unique_id=1081704396]
 layout_mode = 2
 text = "money: $0 "
 
-[node name="VSeparator2" type="VSeparator" parent="Control/HBoxContainer" unique_id=1718707097]
+[node name="VSeparator2" type="VSeparator" parent="Taskbar/HBoxContainer" unique_id=1718707097]
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="Control/HBoxContainer" unique_id=1053388849]
+[node name="EngagementLabel" type="Label" parent="Taskbar/HBoxContainer" unique_id=1053388849]
 layout_mode = 2
 text = "current engagement: none"
 
-[node name="VSeparator3" type="VSeparator" parent="Control/HBoxContainer" unique_id=509671782]
+[node name="VSeparator3" type="VSeparator" parent="Taskbar/HBoxContainer" unique_id=509671782]
 layout_mode = 2
 
-[node name="Label3" type="Label" parent="Control/HBoxContainer" unique_id=2061630840]
+[node name="DetectionLabel" type="Label" parent="Taskbar/HBoxContainer" unique_id=2061630840]
 layout_mode = 2
 text = "detection: 0%"

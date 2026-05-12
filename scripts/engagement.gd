@@ -10,6 +10,7 @@ var burned_bounties : Array[String] = []
 var discovered_pages : Array[String] = []
 var discovered_sites : Array[String] = []
 var claimed_findings : Array[String] = []
+var active_bounty : Bounty = null
 
 signal detection_changed(bounty_id: String, new_value: int)
 signal money_changed(new_value: int)
@@ -18,6 +19,7 @@ signal page_discovered(url: String)
 signal site_discovered(domain: String)
 signal action_invoked(name: String, args: Array)
 signal bounty_burned(bounty_id: String)
+signal active_bounty_changed(bounty: Bounty)
 
 func add_detection(bounty_id: String, amount: int) -> void:
 	if bounty_id.is_empty() or burned_bounties.has(bounty_id):
@@ -46,6 +48,12 @@ func get_detection(bounty_id: String) -> int:
 
 func is_burned(bounty_id: String) -> bool:
 	return burned_bounties.has(bounty_id)
+
+func set_active_bounty(bounty: Bounty) -> void:
+	if active_bounty == bounty:
+		return
+	active_bounty = bounty
+	active_bounty_changed.emit(bounty)
 
 func add_capture(content: String, source_tool: String, tags: Array[String]) -> bool:
 	if has_capture(source_tool, tags):

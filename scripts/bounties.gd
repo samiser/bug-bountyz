@@ -1,5 +1,7 @@
 extends Node
 
+# if we don't reference the resources somewhere they don't get included in
+# the release build
 const ALL : Array[Bounty] = [
 	preload("res://resources/bounties/bug_bountyz_onboarding.tres"),
 	preload("res://resources/bounties/nans_bounty.tres"),
@@ -23,5 +25,19 @@ func find_by_site(domain: String) -> Bounty:
 		if b.target_page == null:
 			continue
 		if Url.site_of(Url.to_url(b.target_page)) == domain:
+			return b
+	return null
+
+func find_by_page(page: Page) -> Bounty:
+	if page == null:
+		return null
+	for b in ALL:
+		if b.target_page == null:
+			continue
+		if not b.engagement_pages.is_empty():
+			if b.engagement_pages.has(page):
+				return b
+			continue
+		if Url.site_of(Url.to_url(b.target_page)) == Url.site_of(Url.to_url(page)):
 			return b
 	return null
