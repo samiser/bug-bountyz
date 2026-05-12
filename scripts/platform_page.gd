@@ -33,7 +33,7 @@ const BURNED_TEMPLATE := """[b]%s[/b] [color=red][BURNED][/color]
 
 func get_content() -> String:
 	if bounties.is_empty():
-		return PAGE_TEMPLATE % [Engagement.level, Engagement.money, "[i]no programs available.[/i]"]
+		return PAGE_TEMPLATE % [Engagement.level, Engagement.lifetime_earned, "[i]no programs available.[/i]"]
 
 	var entries : Array[String] = []
 	for b in bounties:

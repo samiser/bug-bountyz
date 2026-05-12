@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dvrucw8h5j672" path="res://images/toolbox.png" id="10_yc10j"]
 [ext_resource type="Texture2D" uid="uid://qbtcvuo54sff" path="res://images/wiki.png" id="11_jscy8"]
 [ext_resource type="PackedScene" uid="uid://bl14o0urrnk7i" path="res://scenes/desktop/taskbar.tscn" id="12_eb6dy"]
+[ext_resource type="Script" uid="uid://b2v6l03m3p1jl" path="res://scripts/desktop/unlock_everything.gd" id="13_ycdy4"]
 
 [node name="Main" type="Control" unique_id=1822029631]
 layout_mode = 3
@@ -101,3 +102,12 @@ icon = ExtResource("11_jscy8")
 
 [node name="Taskbar" parent="." unique_id=342152614 instance=ExtResource("12_eb6dy")]
 layout_mode = 1
+
+[node name="UnlockEverything" type="Button" parent="." unique_id=420803968]
+layout_mode = 0
+offset_left = 1205.0
+offset_top = 15.0
+offset_right = 1353.0
+offset_bottom = 46.0
+text = "Unlock Everything"
+script = ExtResource("13_ycdy4")
