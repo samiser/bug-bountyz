@@ -54,4 +54,4 @@ func get_content() -> String:
 			Url.to_url(b.target_page),
 			"action://report/" + b.id,
 		])
-	return PAGE_TEMPLATE % [Engagement.level, Engagement.money, "\n\n".join(entries)]
+	return PAGE_TEMPLATE % [Engagement.level, Engagement.lifetime_earned, "\n\n".join(entries)]

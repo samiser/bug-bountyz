@@ -2,8 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ckg4qnkq81pmh" path="res://scripts/resources/page.gd" id="1_ga05t"]
 [ext_resource type="Script" uid="uid://ox62ws8mcbvk" path="res://scripts/resources/finding.gd" id="2_4o6w5"]
-[ext_resource type="Resource" uid="uid://by2kqaf7m2pxd" path="res://resources/findings/y2k-crawler.com/qa_server_exposed.tres" id="3_je0ka"]
-[ext_resource type="Resource" uid="uid://by2kverr3pq2x" path="res://resources/findings/y2k-crawler.com/verbose_error.tres" id="4_ny7sn"]
+[ext_resource type="Resource" uid="uid://bpyraapxss8mq" path="res://resources/findings/pyra-pals.net/apache_xss.tres" id="3_imanj"]
 [ext_resource type="Script" uid="uid://c72mw4r1vwo1x" path="res://scripts/resources/bounty.gd" id="5_ldfhi"]
 [ext_resource type="Resource" uid="uid://dxi7pqqwsw4xj" path="res://resources/sites/pyra-pals.net/index.tres" id="6_ga05t"]
 
@@ -14,6 +13,7 @@ program_name = "PyraPals"
 target_page = ExtResource("6_ga05t")
 payout_min = 100
 payout_max = 500
-required_level = 1
+difficulty = 2
+required_level = 2
 scope = "pyraballs"
-findings = Array[ExtResource("2_4o6w5")]([ExtResource("3_je0ka"), ExtResource("4_ny7sn")])
+findings = Array[ExtResource("2_4o6w5")]([ExtResource("3_imanj")])

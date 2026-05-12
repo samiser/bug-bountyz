@@ -17,7 +17,7 @@ RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
 [resource]
 script = ExtResource("3_xksew")
 domain = "pyra-pals.net"
-fingerprints = Array[String](["22/tcp ssh OpenSSH 3.5", "80/tcp http IIS 4.0", "27015/udp y2k-crawler-server qa-build-0.4"])
+fingerprints = Array[String](["22/tcp ssh OpenSSH 3.5", "80/tcp http Apache 2.0.40", "27015/udp y2k-crawler-server qa-build-0.4"])
 pages = Array[ExtResource("1_08n4t")]([ExtResource("2_ulq4a"), ExtResource("3_txewf"), ExtResource("4_yaqoe"), ExtResource("5_671x8"), ExtResource("6_yaqoe")])
 theme = SubResource("Theme_08n4t")
 metadata/_custom_type_script = "uid://cxbe6dwl3fs0w"

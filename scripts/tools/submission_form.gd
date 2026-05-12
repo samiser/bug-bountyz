@@ -1,7 +1,6 @@
 extends VBoxContainer
 
 @export var bounty_dropdown : OptionButton
-@export var endpoint_dropdown : OptionButton
 @export var class_dropdown : OptionButton
 @export var specifics_dropdown : OptionButton
 @export var poc_list : ItemList
@@ -13,7 +12,6 @@ extends VBoxContainer
 
 func _ready() -> void:
 	bounty_dropdown.item_selected.connect(_on_bounty_selected)
-	endpoint_dropdown.item_selected.connect(_on_endpoint_selected)
 	class_dropdown.item_selected.connect(_on_class_selected)
 	specifics_dropdown.item_selected.connect(_on_specifics_selected)
 	poc_list.multi_selected.connect(_on_poc_changed)
@@ -47,7 +45,6 @@ func _show_form() -> void:
 	form_view.visible = true
 	outcome_view.visible = false
 	_refresh_bounties()
-	_refresh_endpoints()
 	_refresh_classes()
 	_refresh_specifics()
 	_refresh_poc()
@@ -61,22 +58,6 @@ func _refresh_bounties() -> void:
 		bounty_dropdown.add_item(b.program_name)
 	bounty_dropdown.selected = 0
 
-func _refresh_endpoints() -> void:
-	endpoint_dropdown.clear()
-	endpoint_dropdown.add_item("(select endpoint)")
-	endpoint_dropdown.set_item_disabled(0, true)
-	if bounty_dropdown.selected > 0:
-		var bounty : Bounty = Bounties.get_all()[bounty_dropdown.selected - 1]
-		var bounty_site := Url.site_of(Url.to_url(bounty.target_page))
-		for site in Engagement.discovered_sites:
-			if site == bounty_site:
-				endpoint_dropdown.add_item(site)
-		for url in Engagement.discovered_pages:
-			if Url.site_of(url) == bounty_site:
-				endpoint_dropdown.add_item(url)
-	endpoint_dropdown.selected = 0
-	endpoint_dropdown.disabled = bounty_dropdown.selected <= 0
-
 func _refresh_classes() -> void:
 	class_dropdown.clear()
 	class_dropdown.add_item("(select class)")
@@ -84,7 +65,7 @@ func _refresh_classes() -> void:
 	for v in Vulns.ALL:
 		class_dropdown.add_item(v)
 	class_dropdown.selected = 0
-	class_dropdown.disabled = endpoint_dropdown.selected <= 0
+	class_dropdown.disabled = bounty_dropdown.selected <= 0
 
 func _refresh_specifics() -> void:
 	specifics_dropdown.clear()
@@ -112,19 +93,12 @@ func _refresh_submit_state() -> void:
 func _is_form_complete() -> bool:
 	return (
 		bounty_dropdown.selected > 0
-		and endpoint_dropdown.selected > 0
 		and class_dropdown.selected > 0
 		and specifics_dropdown.selected > 0
 		and poc_list.get_selected_items().size() > 0
 	)
 
 func _on_bounty_selected(_idx: int) -> void:
-	_refresh_endpoints()
-	_refresh_classes()
-	_refresh_specifics()
-	_refresh_submit_state()
-
-func _on_endpoint_selected(_idx: int) -> void:
 	_refresh_classes()
 	_refresh_specifics()
 	_refresh_submit_state()
@@ -152,7 +126,6 @@ func _on_submit() -> void:
 
 	var submission := {
 		"bounty": bounty,
-		"endpoint": endpoint_dropdown.get_item_text(endpoint_dropdown.selected),
 		"vuln_class": class_dropdown.get_item_text(class_dropdown.selected),
 		"specifics": specifics_dropdown.get_item_text(specifics_dropdown.selected),
 		"poc_captures": poc_captures,
@@ -168,12 +141,8 @@ func _grade(submission: Dictionary) -> Dictionary:
 	var bounty : Bounty = submission.bounty
 	for i in bounty.findings.size():
 		var f : Finding = bounty.findings[i]
-		print("checking finding %d: endpoint=%s class=%s specifics=%s required_poc=%s" % [i, f.endpoint, f.vuln_class, f.specifics, f.required_poc])
-		print("submitted: endpoint=%s class=%s specifics=%s poc_tags=%s" % [submission.endpoint, submission.vuln_class, submission.specifics, submission.poc_captures.map(func(c): return c.tags)])
 		var key := "%s::%d" % [bounty.id, i]
 		if Engagement.is_finding_claimed(key):
-			continue
-		if f.endpoint != submission.endpoint:
 			continue
 		if f.vuln_class != submission.vuln_class:
 			continue

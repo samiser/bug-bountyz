@@ -50,6 +50,9 @@ func _try_buy(tool_id: String) -> void:
 	spend_money(price)
 	unlock_tool(tool_id)
 	Sound.play_click()
+	var tool_name : String = Tools.ALL[tool_id].name
+	action_invoked.emit("open_toolbox", [tool_name])
+	action_invoked.emit("open_wiki", ["tools"])
 
 func unlock_tool(id: String) -> bool:
 	if unlocked_tools.has(id):

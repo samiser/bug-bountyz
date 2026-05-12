@@ -2,6 +2,7 @@ extends Node
 
 const ALL : Array[String] = [
 	"Remote Code Execution",
+	"Cross-Site Scripting",
 	"Authentication Bypass",
 	"Information Disclosure",
 ]
@@ -40,4 +41,12 @@ Revealing data unintentionally, could be internal details, sensitive files, soft
 [b]Relevant tools:[/b] Browser, Directory Fuzzer
 
 [b]How to find it:[/b] A page that tells you more than it should, or services unintentionally exposed to the internet.""",
+
+	"Cross-Site Scripting": """[b]Cross-Site Scripting[/b]
+
+A flaw that lets an attacker inject script into pages that other users will load, hijacking the trust those users have in the site.
+
+[b]Relevant tools:[/b] Port Scanner
+
+[b]How to find it:[/b] Match a fingerprint from your port scanner to a CVE in your CVE Directory describing an XSS issue in that software.""",
 }

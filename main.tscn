@@ -25,7 +25,7 @@ grow_vertical = 2
 [node name="Toolbox" type="Window" parent="." unique_id=1959032847]
 oversampling_override = 1.0
 title = "Toolbox"
-initial_position = 1
+position = Vector2i(762, 214)
 size = Vector2i(425, 340)
 visible = false
 script = ExtResource("1_eb6dy")
@@ -35,7 +35,7 @@ script = ExtResource("1_eb6dy")
 [node name="Wiki" type="Window" parent="." unique_id=1148828004]
 oversampling_override = 1.0
 title = "Wiki"
-initial_position = 1
+position = Vector2i(148, 206)
 size = Vector2i(584, 356)
 visible = false
 script = ExtResource("1_eb6dy")

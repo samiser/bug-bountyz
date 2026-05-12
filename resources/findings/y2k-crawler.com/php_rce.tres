@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Finding" format=3 uid="uid://by2kphp7rce4n"]
+
+[ext_resource type="Script" uid="uid://ox62ws8mcbvk" path="res://scripts/resources/finding.gd" id="1_phprce"]
+
+[resource]
+script = ExtResource("1_phprce")
+endpoint = "y2k-crawler.com"
+vuln_class = "Remote Code Execution"
+specifics = "CVE-2003-0172"
+severity = "Critical"
+payout = 500
+required_poc = Array[String](["view-source", "y2k-crawler.com/leaderboard.html"])
+metadata/_custom_type_script = "uid://ox62ws8mcbvk"

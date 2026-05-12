@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Finding" format=3 uid="uid://bpyraapxss8mq"]
+
+[ext_resource type="Script" uid="uid://ox62ws8mcbvk" path="res://scripts/resources/finding.gd" id="1_apxss"]
+
+[resource]
+script = ExtResource("1_apxss")
+endpoint = "pyra-pals.net"
+vuln_class = "Cross-Site Scripting"
+specifics = "CVE-2002-0840"
+severity = "Medium"
+payout = 250
+required_poc = Array[String](["port-scan", "pyra-pals.net"])
+metadata/_custom_type_script = "uid://ox62ws8mcbvk"

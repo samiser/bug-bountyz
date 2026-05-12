@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bxcy146w1rjgh" path="res://scripts/tools/submission_form.gd" id="1_sf"]
 
-[node name="SubmissionForm" type="VBoxContainer" unique_id=2400001 node_paths=PackedStringArray("bounty_dropdown", "endpoint_dropdown", "class_dropdown", "specifics_dropdown", "poc_list", "submit_button", "form_view", "outcome_view", "outcome_label", "close_button")]
+[node name="SubmissionForm" type="VBoxContainer" unique_id=2400001 node_paths=PackedStringArray("bounty_dropdown", "class_dropdown", "specifics_dropdown", "poc_list", "submit_button", "form_view", "outcome_view", "outcome_label", "close_button")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -10,7 +10,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sf")
 bounty_dropdown = NodePath("FormView/Bounty/OptionButton")
-endpoint_dropdown = NodePath("FormView/Endpoint/OptionButton")
 class_dropdown = NodePath("FormView/Class/OptionButton")
 specifics_dropdown = NodePath("FormView/Specifics/OptionButton")
 poc_list = NodePath("FormView/PocList")
@@ -36,18 +35,6 @@ text = "bounty:"
 layout_mode = 2
 size_flags_horizontal = 3
 disabled = true
-
-[node name="Endpoint" type="HBoxContainer" parent="FormView" unique_id=2400006]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="FormView/Endpoint" unique_id=2400007]
-custom_minimum_size = Vector2(80, 0)
-layout_mode = 2
-text = "endpoint:"
-
-[node name="OptionButton" type="OptionButton" parent="FormView/Endpoint" unique_id=2400008]
-layout_mode = 2
-size_flags_horizontal = 3
 
 [node name="Class" type="HBoxContainer" parent="FormView" unique_id=2400009]
 layout_mode = 2

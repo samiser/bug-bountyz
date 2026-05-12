@@ -7,6 +7,18 @@ extends HSplitContainer
 func _ready() -> void:
 	list.item_selected.connect(_on_selected)
 	_populate()
+	if source == "tools":
+		Engagement.tool_unlocked.connect(_on_tool_unlocked)
+
+func _on_tool_unlocked(tool_id: String) -> void:
+	if not Tools.ALL.has(tool_id):
+		return
+	var entry_name : String = Tools.ALL[tool_id].name
+	for i in list.item_count:
+		if list.get_item_text(i) == entry_name:
+			list.select(i)
+			_on_selected(i)
+			return
 
 func _populate() -> void:
 	list.clear()

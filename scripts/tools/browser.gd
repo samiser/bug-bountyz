@@ -40,6 +40,7 @@ func _ready() -> void:
 	url_input.text_submitted.connect(_on_url_submitted)
 	Engagement.capture_added.connect(_on_capture_added)
 	Engagement.action_invoked.connect(_on_action)
+	Engagement.tool_unlocked.connect(_on_tool_unlocked)
 
 	source_panel.visible = false
 	source_content_label.bbcode_enabled = false
@@ -192,6 +193,10 @@ func _update_source_capture_button() -> void:
 
 func _on_capture_added(_capture: Dictionary) -> void:
 	_update_source_capture_button()
+
+func _on_tool_unlocked(_id: String) -> void:
+	if current_page is ShopPage:
+		_load_page(current_page, false, false)
 
 func _on_url_submitted(text: String) -> void:
 	if text.is_empty():

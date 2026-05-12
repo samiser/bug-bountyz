@@ -4,6 +4,7 @@ const ALL : Array[CVE] = [
 	preload("res://resources/cves/apache-1.3.27.tres"),
 	preload("res://resources/cves/apache-2.0.40.tres"),
 	preload("res://resources/cves/openssh-1.2.x.tres"),
+	preload("res://resources/cves/php-4.3.0.tres"),
 ]
 
 var _by_id : Dictionary = {}
