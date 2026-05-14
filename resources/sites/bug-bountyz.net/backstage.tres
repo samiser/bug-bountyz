@@ -14,7 +14,6 @@ now you have something to report and you have evidence to back it up. you can re
 
 on this form you can select an endpoint, a class and specifics. you can read more about what those are in [url=action://open_wiki/vulns][color=cyan]your wiki[/color][/url], but in this case you'll want to pick:
 
-   -endpoint: [b]bug-bountyz.net/backstage.html[/b]
    -class: [b]Authentication Bypass[/b]
    -specifics: [b]Missing Authentication Check[/b]
    -proof: the page capture

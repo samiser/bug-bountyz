@@ -24,11 +24,12 @@ const PAGE_TEMPLATE := """
 
 const ENTRY_TEMPLATE := """[b]%s[/b] [color=yellow](level %d)[/color]
 payout: $%d-$%d | difficulty: %s
-detection: %d%%
+detection: %d%% | found: %d/%d
 [i]%s[/i]
 [url=%s][color=cyan]>>> go to engagement <<<[/color][/url] [url=%s][color=red]>>> report finding <<<[/color][/url]"""
 
 const BURNED_TEMPLATE := """[b]%s[/b] [color=red][BURNED][/color]
+found: %d/%d
 [i]engagement closed by detection. no further submissions.[/i]"""
 
 func get_content() -> String:
@@ -40,7 +41,11 @@ func get_content() -> String:
 		if b.required_level > Engagement.level:
 			continue
 		if Engagement.is_burned(b.id):
-			entries.append(BURNED_TEMPLATE % b.program_name)
+			entries.append(BURNED_TEMPLATE % [
+				b.program_name,
+				Engagement.count_claimed_findings(b.id),
+				b.findings.size(),
+			])
 			continue
 		var stars := "*".repeat(b.difficulty) + "-".repeat(5 - b.difficulty)
 		entries.append(ENTRY_TEMPLATE % [
@@ -50,6 +55,8 @@ func get_content() -> String:
 			b.payout_max,
 			stars,
 			Engagement.get_detection(b.id),
+			Engagement.count_claimed_findings(b.id),
+			b.findings.size(),
 			b.scope,
 			Url.to_url(b.target_page),
 			"action://report/" + b.id,

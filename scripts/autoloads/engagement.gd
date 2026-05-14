@@ -159,3 +159,11 @@ func claim_finding(key: String) -> bool:
 
 func is_finding_claimed(key: String) -> bool:
 	return claimed_findings.has(key)
+
+func count_claimed_findings(bounty_id: String) -> int:
+	var prefix := bounty_id + "::"
+	var count := 0
+	for key in claimed_findings:
+		if key.begins_with(prefix):
+			count += 1
+	return count
