@@ -173,6 +173,6 @@ func _show_outcome(result: Dictionary) -> void:
 	outcome_view.visible = true
 	if result.accepted:
 		var f : Finding = result.finding
-		outcome_label.text = "[b]ACCEPTED[/b]\nseverity: %s\npayout: $%d\n\n[i]thanks for the report. payment processed.[/i]" % [f.severity, f.payout]
+		outcome_label.text = "[b]ACCEPTED[/b]\nSeverity: %s\nPayout: $%d\n\n[i]Thanks for the report. Payment processed.[/i]" % [f.severity, f.payout]
 	else:
-		outcome_label.text = "[b]REJECTED[/b]\n\n[i]this submission did not match a known finding.[/i]"
+		outcome_label.text = "[b]REJECTED[/b]\n\n[i]This submission did not match a known finding.[/i]"

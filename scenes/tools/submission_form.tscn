@@ -81,6 +81,8 @@ layout_mode = 2
 size_flags_vertical = 3
 bbcode_enabled = true
 fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Close" type="Button" parent="OutcomeView" unique_id=2400020]
 layout_mode = 2
